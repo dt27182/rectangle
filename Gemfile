@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'ZenTest'
+  gem 'minitest'
 end
 
 group :production do
