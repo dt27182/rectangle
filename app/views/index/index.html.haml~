@@ -1,0 +1,8 @@
+%h2.banner Rectangle
+  
+#category_selection
+  = link_to "shopping", show_category_path("shopping"), :id=>"buyer_button"
+  = link_to "music/enterainment", show_category_path("music/entertainment"), :id=>"seller_button"
+  = link_to "productivity", show_category_path("productivity"), :id=>"seller_button"
+  = link_to "misc", show_category_path("misc"), :id=>"seller_button"
+
