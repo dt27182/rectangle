@@ -1,2 +1,6 @@
 class CategoriesController < ApplicationController
+	def show
+		@subcategories = Category.find_by_id(params[:id]).subcategories
+		
+	end
 end
