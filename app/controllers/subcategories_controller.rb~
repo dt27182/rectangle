@@ -1,0 +1,2 @@
+class SubcategoriesController < ApplicationController
+end
