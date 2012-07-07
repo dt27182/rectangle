@@ -19,4 +19,7 @@ Given /^"(.*?)" is a subcategory of "(.*?)"$/ do |subcategory_name, category_nam
 	Subcategory.create!(:name => subcategory_name, :category_id => Category.find_by_name(category_name).id)
 end
 
+Given /^"(.*?)" is a website under subcategory "(.*?)"$/ do |website_name, subcategory_name|
+	Website.create!(:name => website_name, :subcategory_id => Subcategory.find_by_name(subcategory_name).id)
+end
 

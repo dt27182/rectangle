@@ -23,3 +23,11 @@ Given /^"(.*?)" is a website under subcategory "(.*?)"$/ do |website_name, subca
 	Website.create!(:name => website_name, :subcategory_id => Subcategory.find_by_name(subcategory_name).id)
 end
 
+# Make sure that one string (regexp) occurs before or after another one
+#   on the same page
+
+Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
+  #  ensure that that e1 occurs before e2.
+  #  page.content  is the entire content of the page as a string.
+	page.body.index(e1).should < page.body.index(e2)
+end
