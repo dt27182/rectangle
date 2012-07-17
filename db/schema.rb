@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705214818) do
+ActiveRecord::Schema.define(:version => 20120712031904) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(:version => 20120705214818) do
   end
 
   create_table "ratings", :force => true do |t|
-    t.float    "score"
     t.integer  "website_id"
     t.integer  "community_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.float    "trending_score"
+    t.float    "quality_score"
   end
 
   create_table "subcategories", :force => true do |t|

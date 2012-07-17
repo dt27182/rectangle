@@ -5,9 +5,9 @@ Rectangle::Application.routes.draw do
 	#homepage
 	match '/' => 'index#index', :as => :index
 	#website listings page for main category
-	match '/categories/:name/show' => 'categories#show', :as => :show_category
+	match '/categories/:name/show/:sort_type' => 'categories#show', :as => :show_category
 	#wesite listings page for sub category
-	match '/categories/:name/subcategories/:subname/show' => 'subcategories#show', :as => :show_subcategory
+	match '/categories/:name/subcategories/:subname/show/:sort_type' => 'subcategories#show', :as => :show_subcategory
 	#page for website description and comments
 	match '/website/:id/show' => 'websites#show', :as => :show_website
 	#page to create review for website

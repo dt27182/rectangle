@@ -1,8 +1,8 @@
 %h2.banner Rectangle
   
 #category_selection
-  = link_to "shopping", show_category_path("shopping"), :id=>"shopping"
-  = link_to "music/enterainment", show_category_path("entertainment"), :id=>"music/entertainment"
-  = link_to "productivity", show_category_path("productivity"), :id=>"productivity"
-  = link_to "misc", show_category_path("misc"), :id=>"misc"
+  = link_to "shopping", show_category_path("shopping", "trending"), :id=>"shopping"
+  = link_to "music/enterainment", show_category_path("entertainment", "trending"), :id=>"music/entertainment"
+  = link_to "productivity", show_category_path("productivity", "trending"), :id=>"productivity"
+  = link_to "misc", show_category_path("misc", "trending"), :id=>"misc"
 

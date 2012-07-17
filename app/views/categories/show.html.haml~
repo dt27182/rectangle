@@ -1,3 +1,3 @@
 #subcategory_selection
 	- @subcategories.each do |subcategory|
-		= link_to "#{subcategory.name}", show_subcategory_path("#{subcategory.name}"), :id => subcategory.name
+		= link_to "#{subcategory.name}", show_subcategory_path(@category.name, subcategory.name), :id => subcategory.name
