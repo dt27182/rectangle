@@ -10,9 +10,10 @@ Background: User is on the Category front page for shoppping
 	Given "default" is a community
 	Given the following websites exist:
 	|website_name|website_url|subcategory_name|community_name|trending_score|quality_score|
+	|zappos      |zappos.com |misc            |default       |1             |1            |
 	|amazon      |amazon.com |misc            |default       |3             |3            |
 	|ebay        |ebay.com   |misc            |default       |2             |2            |
-	|zappos      |zappos.com |misc            |default       |1             |1            |
+
 	
 	Given I am at the Category front page for "shopping"
 	Then I should see "men's"

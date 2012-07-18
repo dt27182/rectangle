@@ -8,6 +8,7 @@ class Category < ActiveRecord::Base
   			website_list << website
   		end
   	end
+  	website_list.sort! { |a,b| b.get_trending_score(community_name) <=> a.get_trending_score(community_name) }
   	return website_list
   end
 end
