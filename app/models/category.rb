@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
   	website_list = []
   	self.subcategories.each do |subcategory|
   		subcategory.websites.each do |website|
-  			website_list << [website, website.get_trending_score(community_name)]
+  			website_list << website
   		end
   	end
   	return website_list

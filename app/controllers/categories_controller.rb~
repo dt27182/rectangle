@@ -2,6 +2,6 @@ class CategoriesController < ApplicationController
 	def show
 		@category = Category.find_by_name(params[:name])
 		@subcategories = @category.subcategories
-		@category.sorted_websites("default")
+		@website = @category.sorted_websites("default")
 	end
 end
