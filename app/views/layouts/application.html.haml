@@ -1,0 +1,32 @@
+%html
+
+	%head
+	
+		%title Rectangle
+		= stylesheet_link_tag 'application'
+		= javascript_include_tag 'application'
+		= csrf_meta_tags
+	
+	%body
+	
+		#sign
+			= link_to image_tag('logo_goes_here_clicking_this_goes_2_home_page.png', :size =>'450x150'), '/'
+			
+		#links_bar
+			= link_to "Home/temp", '/', :id=>"home", :class=>"link_bar_link"
+			= link_to "Submit A Site/temp", '/', :id=>"submit", :class=>"link_bar_link"
+			= link_to "Our Mission/temp", '/', :id=>"mission", :class=>"link_bar_link"
+			= link_to "Profile/temp", '/', :id=>"profile", :class=>"link_bar_link"
+			
+		#wrapper
+		
+			- if flash[:notice]
+				#notice.message= flash[:notice]
+			- elsif flash[:warning]
+				#warning.message= flash[:warning]
+				
+			= yield
+			
+	%footer
+		Copyright © 2012 etcetcmaybe this is the footer
+
