@@ -8,7 +8,8 @@
 
 html {
 	height: 100%;
-	background-image: url('background.jpg');
+	/*background-image: url('background.jpg');*/
+	background-color: #DEDEFF;
 	background-repeat:no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -25,8 +26,7 @@ html {
 #links_bar {
   position: relative;
   margin: 5px auto 10em auto;
-  width: 675px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-align: center;
   margin-bottom: 50px;
 }
 
@@ -34,20 +34,10 @@ html {
   text-transform:uppercase;
 }
 
-#wrapper {
-  position: relative;
-  margin: 5px auto 10em auto;
-  width: 675px;
-  background: #CCCCCC;
-  color: #000000; /* font color */
-	height: auto;
-	padding: 0px 10px 10px 10px;
-	border-radius: 10px;
-	border-top: solid 1px #000000;
-	border-right: solid 1px #000000;
-  border-left: solid 1px #000000;
-	border-bottom: solid 1px #000000;
+#wrapper {  /*this includes the yield, basically this is the main body*/
+
 }
+
 
 
 footer {

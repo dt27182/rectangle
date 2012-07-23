@@ -1,8 +1,19 @@
-%h2.banner Rectangle
+%index
+
+#index_group
+
+  %h2.banner Find the best places online that you've never heard of...
   
-#category_selection
-  = link_to "shopping", show_category_path("shopping", "trending"), :id=>"shopping", :class=>"link_bar_link"
-  = link_to "music/enterainment", show_category_path("entertainment", "trending"), :id=>"music/entertainment", :class=>"link_bar_link"
-  = link_to "productivity", show_category_path("productivity", "trending"), :id=>"productivity", :class=>"link_bar_link"
-  = link_to "misc", show_category_path("misc", "trending"), :id=>"misc", :class=>"link_bar_link"
+  #category_selection
+    = link_to image_tag('buy_Stuff.png', :size =>'450x450'), show_category_path("shopping", "trending"), :id=>"shopping_img"
+    = link_to "Buy Stuff", show_category_path("shopping", "trending"), :id=>"shopping"
+    
+    = link_to image_tag('entertainment_Stuff.png', :size =>'450x450'), show_category_path("entertainment", "trending"), :id=>"entertainment_img"
+    = link_to "Entertaining Stuff", show_category_path("entertainment", "trending"), :id=>"entertainment"
+    
+    = link_to image_tag('learn_Stuff.png', :size =>'450x450'), show_category_path("productivity", "trending"), :id=>"productivity_img"
+    = link_to "Learn Stuff", show_category_path("productivity", "trending"), :id=>"productivity"
+    
+    = link_to image_tag('other_Stuff.png', :size =>'450x450'), show_category_path("misc", "trending"), :id=>"misc_img"
+    = link_to "Do Other Stuff", show_category_path("misc", "trending"), :id=>"misc"
 
