@@ -33,7 +33,6 @@ html {
   width: 75%;
   background: #FFFFFF;
   border-radius: 5px;
-  border: solid 3px #000000;
 }
 
 .link_bar_link {

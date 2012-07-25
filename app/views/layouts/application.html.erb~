@@ -6,6 +6,15 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<div id='content'>
+  <div class='left column'>
+    <h2>Welcome to our site!</h2>
+  </div>
+  <div class="right column">
+    <h2>Welcome to our site on the right!</h2>
+    <p>blah?</p>
+  </div>
+</div>
 <body>
 
 <%= yield %>
