@@ -28,7 +28,7 @@ html {
 
 #links_bar {
   position: absolute;
-  top: 44px;
+  top: 47px;
   right: 30px;
   text-align: center;
   margin-top: 30px;
@@ -38,7 +38,7 @@ html {
   width: 600px;
   background: #FFFFFF;
   border-radius: 5px;
-  border: solid 3px #000000;
+  border: solid 3px #DCE6F2;
   word-spacing: 50px;
 }
 
@@ -49,6 +49,8 @@ html {
 
 .website_tile { /* the tile class*/
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   width: 40%;
   background: #FFFFFF;
   color: #000000; 
@@ -70,7 +72,7 @@ html {
   padding-bottom: 10px;
   width: 60px;
   background: #FFFFFF;
-  border: solid 3px #000000;
+  border: solid 3px #DCE6F2;
   border-radius: 5px;
 }
 
@@ -80,9 +82,19 @@ html {
 
 
 footer {
+	position: relative;
+  background-color: #FFFFFF;
   margin-top: 40px;
   font-size: 15pt;
-  text-align: center;
 }
 
+#Legal {
+	position: relative;
+}
+
+#Help {
+	position: absolute;
+	right: 2px;
+	bottom: -20px;
+}
 
