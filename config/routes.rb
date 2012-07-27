@@ -3,8 +3,8 @@ Rectangle::Application.routes.draw do
   # first created -> highest priority.
 
 	#homepage
-	match '/' => 'index#show', :as => :index
-	match '/show/:sort_type' => 'index #index', :as => :index_show
+	match '/' => 'index#index', :as => :index
+	match '/show/:sort_type' => 'index#show', :as => :index_show
 	#website listings page for main category
 	match '/categories/:name/show/:sort_type' => 'categories#show', :as => :show_category
 	#wesite listings page for sub category

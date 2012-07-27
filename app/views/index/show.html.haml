@@ -1,0 +1,20 @@
+= render :partial => "/header"
+= render :partial => "/toolbar"
+
+#category_selection_container
+	#slogan
+		Find the best places online that you've never heard of..
+	#category_selection
+		= link_to image_tag("shopping.png"), show_category_path("shopping", "trending"), :id=>"shopping"
+
+		= link_to image_tag("entertainment.png"), show_category_path("entertainment", "trending"), :id=>"music/entertainment"
+
+		= link_to image_tag("productivity.png"), show_category_path("productivity", "trending"), :id=>"productivity"
+
+		= link_to image_tag("misc.png"), show_category_path("misc", "trending"), :id=>"misc"
+
+
+= render :partial => "/footer"
+  
+  
+ 
