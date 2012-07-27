@@ -24,7 +24,12 @@ class WebsitesController < ApplicationController
 		end
 		subcategory.websites << new_website
 		subcategory.save!
+		Community.find_each do |community|
+			Rating.create!({:website_id => new_website.id, :community_id => community.id, :trending_score => 0, :quality_score => 0})
+		end
 		flash[:notice] = "Website successfully submitted!"
 		redirect_to index_path
+	end
+	def show
 	end
 end
