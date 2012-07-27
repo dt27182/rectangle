@@ -1,5 +1,6 @@
 class Website < ActiveRecord::Base
   # attr_accessible :title, :body
+  attr_accessible :name, :url, :description
   has_many :ratings
   has_many :communities, :through => :ratings
   def get_trending_score(community_name)
