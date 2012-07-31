@@ -12,9 +12,9 @@ Scenario: User wants to go to the shopping category
 	When I follow "shopping"
 	Then I should be at the Category front page for "shopping"
 	
-Scenario: User wants to go to the music/entertainment category
+Scenario: User wants to go to the entertainment category
 
-	When I follow "music/entertainment"
+	When I follow "entertainment"
 	Then I should be at the Category front page for "entertainment"
 	
 Scenario: User wants to go to the productivity category

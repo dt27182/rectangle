@@ -32,4 +32,18 @@ class WebsitesController < ApplicationController
 	end
 	def show
 	end
+	def rate
+		rate_type = params[:type]
+		communities = ["default"]
+		website = Website.find_by_id(params[:id])
+		if rate_type == "up"
+			communities.each do |community|
+				website.upvote(community)
+			end
+		else
+			communities.each do |community|
+				website.downvote(community)
+			end
+		end
+	end
 end

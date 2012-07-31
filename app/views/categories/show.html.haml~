@@ -1,7 +1,5 @@
-#subcategory_selection
-	- @subcategories.each do |subcategory|
-		= link_to "#{subcategory.name}", show_subcategory_path(@category.name, subcategory.name, "trending"), :id => subcategory.name
-	
 #website_list
 	- @websites.each do |website|
 		= link_to "#{website.name}", show_website_path(website.id), :id => website.name
+	amazon
+	ebay
