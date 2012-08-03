@@ -3,7 +3,9 @@ class Website < ActiveRecord::Base
   attr_accessible :name, :url, :description
   has_many :ratings
   has_many :communities, :through => :ratings
-  
+  validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+
+
   def get_trending_score(community_name)
   	community = Community.find_by_name(community_name)
   	return Rating.find_by_website_id_and_community_id(self.id, community.id).trending_score

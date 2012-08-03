@@ -14,7 +14,7 @@
 		
 	%p
 		= label :category, 'Category:'
-		= select :category, :name, ['shopping', 'productivity', 'entertainment', 'misc']
+		= select :category, :name, ['shopping', 'productivity', 'entertainment', 'misc'], :selected => "#{@failed_website[:category][:name]}"
 		
 	%p
 		= label :website, :description,  'A short description of the site:'
