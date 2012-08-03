@@ -14,7 +14,7 @@
 				= link_to image_tag('rectangle_logo.png'), '/'
 			#links_bar
 				= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
-				= link_to "Submit A Site", '/', :id=>"submit", :class=>"link_bar_link"
+				= link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
 				= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
 				= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
 			#user
@@ -33,5 +33,5 @@
 			= yield
 			
 	%footer
-		Copyright © 2012 etcetcmaybe this is the footer
+		=render :partial => "/footer"
 

@@ -21,7 +21,7 @@
 				- if @logged_in
 					= link_to "Logout", '/logout', :id=>"logout"
 				- else
-					= link_to "Log In", '/login', :id=>"login"
+					= link_to "Log In / Register", '/login', :id=>"login"
 			
 		#wrapper
 		
@@ -33,5 +33,5 @@
 			= yield
 			
 	%footer
-		Copyright © 2012 etcetcmaybe this is the footer
+		=render :partial => "/footer"
 
