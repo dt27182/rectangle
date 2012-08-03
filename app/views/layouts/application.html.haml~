@@ -31,6 +31,6 @@
 				
 			= yield
 			
-	#footer
+	%footer
 		=render :partial => "/footer"
 
