@@ -17,6 +17,7 @@ html {
 }
 
 body {
+	margin: 0;
 	height: 100%;
 }
 	
@@ -24,14 +25,16 @@ body {
   background-color: #FFFFFF;
 }
 
+
 #logo {
 	position: relative;
+	margin-left: 20px;
 	z-index: 0;
 }
 
 ul#links_bar {
   position: absolute;
-  top: 55px;
+  top: 57px;
   right: 30px;
   text-align: center;
   //margin-top: 30px;
@@ -63,11 +66,14 @@ ul#links_bar {
 }
 
 .link_bar_link {
-  text-transform:uppercase;
+  //text-transform:uppercase;
   word-spacing: 3px;
+  font-family: Impact, Charcoal, sans-serif; 
+	font-variant:small-caps;
+	font-weight:bold;
 }
 
-#webtiles{
+#webtiles {
 	position: relative;
 }
 
@@ -83,6 +89,13 @@ ul#links_bar {
 	border-right: solid 2px #CCCCCC;
   border-left: solid 2px #CCCCCC;
 	border-bottom: solid 2px #CCCCCC;
+}
+
+#vote {
+	float: left;
+	padding: 0;
+	margin: 0 20px 0 10px;
+	margin-top: 5px;
 }
 
 ul#grid {
@@ -105,7 +118,6 @@ ul#grid {
 
 #grid li img {
 	background-color: white;
-
 }
   
 #grid li a:hover img {
@@ -138,7 +150,7 @@ div.grid_display h2 {
 }
   
 .grid_display p {
-	margin:0; padding: 0;
+	margin-top:0; padding: 0;
 	font-size: 15px;
 	color: #58595b;
 }
@@ -148,9 +160,12 @@ div.grid_display h2 {
   top: 16px;
   right: 30px;
   text-align: center;
+  font-family: Impact, Charcoal, sans-serif; 
+	font-variant:small-caps;
+	font-weight:bold;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 150px;
+  width: 210px;
   background: #FFFFFF;
   border: solid 5px #DCE6F2;
   border-radius: 5px;
@@ -165,6 +180,8 @@ footer {
 	clear:both;
   background-color: #FFFFFF;
   margin-top: 40px;
+  padding-top: 5px;
+  padding-bottom: 10px;
   font-size: 15pt;
 }
 
@@ -177,6 +194,6 @@ ul#Help {
 	position: absolute;
 	list-style: none;
 	left: 200px;
-	bottom: -20px;
+	bottom: 10px;
 }
 
