@@ -3,8 +3,14 @@ class Website < ActiveRecord::Base
   attr_accessible :name, :url, :description
   has_many :ratings
   has_many :communities, :through => :ratings
-  validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
-
+  validates :name, :description, :presence => true
+  validates :url, :presence => true, :uniqueness => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+	before_validation :get_full_url
+	
+	protected
+	def get_full_url
+	end
+  
 
   def get_trending_score(community_name)
   	community = Community.find_by_name(community_name)
@@ -66,4 +72,11 @@ class Website < ActiveRecord::Base
   	rating.quality_score = rating.num_upvote/(rating.num_upvote + rating.num_downvote)
   	rating.save!
   end
+  
+  protected
+	def get_full_url
+		if !(self.url =~ /(http|https):\/\/*/)
+			self.url = "http://" + self.url
+		end
+	end
 end

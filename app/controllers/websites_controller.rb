@@ -6,6 +6,11 @@ class WebsitesController < ApplicationController
 		else
 			@failed_website = {:name => "", :url => "", :category => "shopping", :description => ""}
 		end
+		if !(session[:failed_category].nil?)
+			@failed_category = session[:failed_category]
+		else
+			@failed_category = {:name => "shopping"}
+		end
 	end
 	def commit_new
 		category = Category.find_by_name(params[:category][:name])
@@ -47,5 +52,6 @@ class WebsitesController < ApplicationController
 				website.downvote(community)
 			end
 		end
+		redirect_to index_path
 	end
 end
