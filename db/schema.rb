@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712031904) do
+ActiveRecord::Schema.define(:version => 20120731070630) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20120712031904) do
     t.datetime "updated_at",     :null => false
     t.float    "trending_score"
     t.float    "quality_score"
+    t.integer  "num_upvote"
+    t.integer  "num_downvote"
   end
 
   create_table "subcategories", :force => true do |t|
