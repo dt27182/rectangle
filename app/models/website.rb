@@ -9,7 +9,12 @@ class Website < ActiveRecord::Base
   	return Rating.find_by_website_id_and_community_id(self.id, community.id).trending_score
   end
   
-  def self.sorted_websites(community_name, sort_type)
+  def get_quality_score(community_name)
+  	community = Community.find_by_name(community_name)
+  	return Rating.find_by_website_id_and_community_id(self.id, community.id).quality_score
+  end
+  
+  def self.websites_sorted_by_trending(community_name)
   	website_list = []
   	Website.find_each do |website|
   		website_list << website
