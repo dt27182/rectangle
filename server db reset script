@@ -19,3 +19,5 @@ entertainment.subcategories << Subcategory.create!({:name => "general"})
 entertainment.save!
 misc.subcategories << Subcategory.create!({:name => "general"})
 misc.save!
+
+
