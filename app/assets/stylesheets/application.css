@@ -29,20 +29,37 @@ body {
 	z-index: 0;
 }
 
-#links_bar {
+ul#links_bar {
   position: absolute;
-  top: 47px;
+  top: 55px;
   right: 30px;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 600px;
-  background: #FFFFFF;
+  //margin-top: 30px;
+  //margin-bottom: 30px;
+  //padding-top: 10px;
+  //padding-bottom: 10px;
+  width: 840px;
+  //background: #FFFFFF;
   border-radius: 5px;
-  border: solid 3px #DCE6F2;
+  border: solid 5px #DCE6F2;
   word-spacing: 50px;
+  list-style-type:none;
+	overflow:hidden;
+}
+
+#links_bar li {
+	float:left;
+}
+
+#links_bar li a {
+	display:block;
+	width:200px;
+	background-color:#DCE6F2;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .link_bar_link {
@@ -135,12 +152,12 @@ div.grid_display h2 {
   padding-bottom: 10px;
   width: 150px;
   background: #FFFFFF;
-  border: solid 3px #DCE6F2;
+  border: solid 5px #DCE6F2;
   border-radius: 5px;
 }
 
 #wrapper {  /*this includes the yield, basically this is the main body*/
-
+	height: 100%;
 }
 
 footer {
@@ -151,13 +168,15 @@ footer {
   font-size: 15pt;
 }
 
-#Legal {
+ul#Legal {
 	position: relative;
+	list-style: none;
 }
 
-#Help {
+ul#Help {
 	position: absolute;
-	right: 2px;
+	list-style: none;
+	left: 200px;
 	bottom: -20px;
 }
 
