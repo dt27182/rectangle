@@ -1,5 +1,5 @@
 class IndexController < ApplicationController
 	def index
-		@websites = Website.sorted_websites("default", "trending")
+		@websites = Website.sort_by_trending("default")
 	end
 end
