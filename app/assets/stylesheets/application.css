@@ -16,7 +16,10 @@ html {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-
+body {
+	height: 100%;
+}
+	
 #banner {
   background-color: #FFFFFF;
 }
@@ -70,7 +73,7 @@ ul#grid {
 	padding: 0;
 	list-style: none;
 	margin: 20px auto 0;
-	width: 80%;  
+	width: 90%;  
 }
 
 #grid li {
@@ -140,9 +143,9 @@ div.grid_display h2 {
 
 }
 
-
 footer {
 	position: relative;
+	clear:both;
   background-color: #FFFFFF;
   margin-top: 40px;
   font-size: 15pt;

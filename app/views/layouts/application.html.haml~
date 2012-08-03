@@ -8,7 +8,6 @@
 		= csrf_meta_tags
 	
 	%body
-	
 		#banner
 			#logo
 				= link_to image_tag('rectangle_logo.png'), '/'
@@ -21,7 +20,7 @@
 				- if @logged_in
 					= link_to "Logout", '/logout', :id=>"logout"
 				- else
-					= link_to "Log In", '/login', :id=>"login"
+					= link_to "Log In / Register", '/login', :id=>"login"
 			
 		#wrapper
 		
@@ -32,6 +31,6 @@
 				
 			= yield
 			
-	%footer
+	#footer
 		=render :partial => "/footer"
 
