@@ -7,12 +7,13 @@
 		
 #webtiles
 	- if not @websites.empty?
-		#website_list
+		%ul#grid
 			- @websites.each do |website|
-				.website_tile
-					= link_to image_tag('placeholder.jpg', :size => '350x350'), show_website_path(website.id), :id => "#{website.name} image"
-					= link_to "#{website.name}", show_website_path(website.id), :id => website.name
-					= "(#{Category.find_by_id(Subcategory.find_by_id(website.subcategory_id).category_id).name})"
+				%li
+					.website_tile
+						= link_to image_tag('placeholder.jpg', :size => '350x350'), show_website_path(website.id), :id => "#{website.name} image"
+						= link_to "#{website.name}", show_website_path(website.id), :id => website.name
+						= "(#{Category.find_by_id(Subcategory.find_by_id(website.subcategory_id).category_id).name})"
 	- else
 		%ul#grid
 			%li

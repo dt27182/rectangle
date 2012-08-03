@@ -37,12 +37,12 @@
 %ul#grid
 	%li
 		.website_tile
-			= link_to image_tag('placeholder.jpg', :size => '450x450')
+			= link_to image_tag('placeholder.jpg', :size => '450x450', :size =>'350x350')
 	%li
 		.website_tile
-			= link_to image_tag('placeholder.jpg', :size => '450x450')
+			= link_to image_tag('placeholder.jpg', :size => '450x450', :size =>'350x350')
 	%li
 		.website_tile
-			= link_to image_tag('placeholder.jpg', :size => '450x450')
+			= link_to image_tag('placeholder.jpg', :size => '450x450', :size =>'350x350')
 		
 
