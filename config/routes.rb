@@ -21,4 +21,6 @@ Rectangle::Application.routes.draw do
 	get '/websites/new' => 'websites#display_new', :as => :display_new_website
   #route to take new website form submission
   put '/websites/new' => 'websites#commit_new', :as => :commit_new_website
+  #route to rate website
+  post '/website/:id/rate/:type' => 'websites#rate', :as => :rate_website
 end

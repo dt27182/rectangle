@@ -16,9 +16,5 @@ Background: User is on the Category front page for shoppping
 
 	
 	Given I am at the Category front page for "shopping"
-	Then I should see "men's"
-	Then I should see "women's"
-	Then I should see "children's"
-	
 	Then I should see "amazon" before "ebay"
 	Then I should see "ebay" before "zappos"

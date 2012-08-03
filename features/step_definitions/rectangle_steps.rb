@@ -27,10 +27,12 @@ end
 
 Given /^the following websites exist:$/ do |websites_table|
 	websites_table.hashes.each do |website|
-		subcategory_id = Subcategory.find_by_name(website["subcategory_name"]).id
-		community_id = Community.find_by_name(website["community_name"]).id
-		website_id = Website.create!(:name => website["website_name"], :url => website["web_url"], :subcategory_id => subcategory_id).id
-		Rating.create!(:trending_score => website["trending_score"], :quality_score => website["quality_score"], :website_id => website_id, :community_id => community_id)
+		subcategory = Subcategory.find_by_name(website["subcategory_name"])
+		community = Community.find_by_name(website["community_name"])
+		website_obj = Website.create!(:name => website["website_name"], :url => website["web_url"])
+		subcategory.websites << website_obj
+		subcategory.save!
+		Rating.create!(:trending_score => website["trending_score"], :quality_score => website["quality_score"], :website_id => website_obj.id, :community_id => community.id)
 	end
 end
 # Make sure that one string (regexp) occurs before or after another one
