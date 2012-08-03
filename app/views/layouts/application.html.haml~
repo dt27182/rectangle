@@ -6,16 +6,20 @@
 		= stylesheet_link_tag 'application'
 		= javascript_include_tag 'application'
 		= csrf_meta_tags
-	
+
 	%body
 		#banner
 			#logo
 				= link_to image_tag('rectangle_logo.png'), '/'
-			#links_bar
-				= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
-				= link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
-				= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
-				= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
+			%ul#links_bar
+				%li
+					= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
+				%li
+					= link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
+				%li
+					= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
+				%li
+					= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
 			#user
 				- if @logged_in
 					= link_to "Logout", '/logout', :id=>"logout"
@@ -31,6 +35,6 @@
 				
 			= yield
 			
-	%footer
-		=render :partial => "/footer"
+		%footer
+			=render :partial => "/footer"
 
