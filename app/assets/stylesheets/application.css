@@ -51,11 +51,9 @@ html {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
   background: #FFFFFF;
-  color: #000000; 
 	height: auto;
-	padding: 0px 10px 10px 10px;
+	padding: 30px 25px 50px 25px;
 	border-radius: 50px; /*adjusts the curve on border*/
 	border-top: solid 2px #CCCCCC;
 	border-right: solid 2px #CCCCCC;
@@ -63,6 +61,64 @@ html {
 	border-bottom: solid 2px #CCCCCC;
 }
 
+ul#grid {
+	position: relative;
+	padding: 0;
+	list-style: none;
+	margin: 20px auto 0;
+	width: 80%;  
+}
+
+#grid li {
+	float: left;
+	padding: 0;
+	margin: 0 50px 100px 50px;
+} 
+
+#grid li a {
+	display: block;
+}
+
+#grid li img {
+	background-color: white;
+
+}
+  
+#grid li a:hover img {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+/* below is the div that holds the grid, change stuff here for text and etc. */
+.grid_display {
+	position: relative;
+	padding: 20px;
+	margin-left: auto; margin-right: auto;  margin-top:50px; margin-bottom:0;
+	/*background-color: #ffd7ce;*/
+	/*width: 513px; */
+	/*these two properties will be inherited by .grid_display h2 and .grid_display p */
+	/*font-family: 'GraublauWeb', arial, serif; */
+	/*text-align: center;*/
+}  
+
+div.grid_display h2 {
+	padding: 0; margin: 0;
+	clear: both;
+	font-size: 35px;
+	font-weight: normal;
+	color: #58595b;
+	background: none;
+	font-family: 'GraublauWeb', arial, serif;  
+	/* reset for cascade effects that are trickling down from other h2's */
+	text-transform: none;
+	letter-spacing: normal;
+}
+  
+.grid_display p {
+	margin:0; padding: 0;
+	font-size: 15px;
+	color: #58595b;
+}
+  
 #user {
   position: absolute;
   top: 16px;
@@ -70,7 +126,7 @@ html {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 60px;
+  width: 150px;
   background: #FFFFFF;
   border: solid 3px #DCE6F2;
   border-radius: 5px;

@@ -10,25 +10,39 @@
 		#website_list
 			- @websites.each do |website|
 				.website_tile
-					= link_to image_tag('placeholder.png', :size => '450x450'), show_website_path(website.id), :id => "#{website.name} image"
+					= link_to image_tag('placeholder.jpg', :size => '350x350'), show_website_path(website.id), :id => "#{website.name} image"
 					= link_to "#{website.name}", show_website_path(website.id), :id => website.name
 					= "(#{Category.find_by_id(Subcategory.find_by_id(website.subcategory_id).category_id).name})"
 	- else
-		#category_1
-			.website_tile
-				= link_to image_tag('shopping.png', :size =>'450x450'), show_category_path("shopping", "trending"), :id=>"shopping_img"
-				= link_to "Buy Stuff", show_category_path("shopping", "trending"), :id=>"shopping"
-		#category_2
-			.website_tile
-				= link_to image_tag('productivity.png', :size =>'450x450'), show_category_path("productivity", "trending"), :id=>"productivity_img"
-				= link_to "Learn Stuff", show_category_path("productivity", "trending"), :id=>"productivity"
-		#category_3
-			.website_tile
-				= link_to image_tag('entertainment.png', :size =>'450x450'), show_category_path("entertainment", "trending"), :id=>"entertainment_img"
-				= link_to "Entertaining Stuff", show_category_path("entertainment", "trending"), :id=>"entertainment"
-		#category_4
-			.website_tile
-				= link_to image_tag('misc.png', :size =>'450x450'), show_category_path("misc", "trending"), :id=>"misc_img"
-				= link_to "Do Other Stuff", show_category_path("misc", "trending"), :id=>"misc"
+		%ul#grid
+			%li
+				.website_tile
+					= link_to image_tag('shopping.png', :size =>'350x350'), show_category_path("shopping", "trending"), :id=>"shopping_img"
+					= link_to "Buy Stuff", show_category_path("shopping", "trending"), :id=>"shopping"
+			%li
+				.website_tile
+					= link_to image_tag('productivity.png', :size =>'350x350'), show_category_path("productivity", "trending"), :id=>"productivity_img"
+					= link_to "Learn Stuff", show_category_path("productivity", "trending"), :id=>"productivity"
+			%li
+				.website_tile
+					= link_to image_tag('entertainment.png', :size =>'350x350'), show_category_path("entertainment", "trending"), :id=>"entertainment_img"
+					= link_to "Entertaining Stuff", show_category_path("entertainment", "trending"), :id=>"entertainment"
+			%li
+				.website_tile
+					= link_to image_tag('misc.png', :size =>'350x350'), show_category_path("misc", "trending"), :id=>"misc_img"
+					= link_to "Do Other Stuff", show_category_path("misc", "trending"), :id=>"misc"
 
+
+
+%ul#grid
+	%li
+		.website_tile
+			= link_to image_tag('placeholder.jpg', :size => '450x450')
+	%li
+		.website_tile
+			= link_to image_tag('placeholder.jpg', :size => '450x450')
+	%li
+		.website_tile
+			= link_to image_tag('placeholder.jpg', :size => '450x450')
+		
 
