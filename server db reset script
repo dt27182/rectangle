@@ -1,0 +1,21 @@
+Category.delete_all
+Subcategory.delete_all
+Website.delete_all
+Rating.delete_all
+Community.delete_all
+
+Community.create!({:name => "default"})
+
+shopping = Category.create!({:name => "shopping"})
+productivity = Category.create!({:name => "productivity"})
+entertainment = Category.create!({:name => "entertainment"})
+misc = Category.create!({:name => "misc"})
+
+shopping.subcategories << Subcategory.create!({:name => "general"})
+shopping.save!
+productivity.subcategories << Subcategory.create!({:name => "general"})
+productivity.save!
+entertainment.subcategories << Subcategory.create!({:name => "general"})
+entertainment.save!
+misc.subcategories << Subcategory.create!({:name => "general"})
+misc.save!

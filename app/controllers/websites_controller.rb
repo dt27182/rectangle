@@ -30,8 +30,10 @@ class WebsitesController < ApplicationController
 		flash[:notice] = "Website successfully submitted!"
 		redirect_to index_path
 	end
+	
 	def show
 	end
+	
 	def rate
 		rate_type = params[:type]
 		communities = ["default"]

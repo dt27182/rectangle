@@ -14,14 +14,12 @@ class Website < ActiveRecord::Base
   	return Rating.find_by_website_id_and_community_id(self.id, community.id).quality_score
   end
   
-  def self.websites_sorted_by_trending(community_name)
+  def self.sort_by_trending(community_name)
   	website_list = []
   	Website.find_each do |website|
   		website_list << website
   	end
-  	if(sort_type == "trending")
-  		website_list.sort! { |a,b| b.get_trending_score(community_name) <=> a.get_trending_score(community_name) }
-  	end
+  	website_list.sort! { |a,b| b.get_trending_score(community_name) <=> a.get_trending_score(community_name) }
   	return website_list
   end
   
