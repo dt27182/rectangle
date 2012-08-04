@@ -7,3 +7,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+function upvote(website_id){
+	$.post("/website/" + website_id + "/rate/up", function(data){});
+}
+function downvote(website_id){
+	$.post("/website/" + website_id + "/rate/up", function(data){});
+}
+
+$(document).ready(
+	function(){
+		$.each($(".upvote"), function(index, value){
+			value.click(upvote(value.attr("website_id"));
+		});	
+		$.each($(".downvote"), function(index, value){
+			value.click(downvote(value.attr("website_id"));
+		});	
+	}
+);

@@ -14,6 +14,7 @@ class UriValidator < ActiveModel::EachValidator
       begin # check header response
         case Net::HTTP.get_response(URI.parse(value))
           when Net::HTTPSuccess then true
+          when Net::HTTPRedirection then true
           else object.errors.add(attribute, configuration[:message]) and false
         end
       rescue # Recover on DNS failures..

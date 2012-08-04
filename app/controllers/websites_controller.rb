@@ -28,10 +28,8 @@ class WebsitesController < ApplicationController
 		
 		existing_website = Website.find_by_url(new_url)
 		if existing_website
-			@existing_website = existing_website
-			session[:failed_website] = params[:website]
-			session[:failed_category] = params[:category]
-			redirect_to display_new_website_path and return
+			flash[:warning] = "The site you tried to submit already exists. You have been redirected to it's profile page!"
+			redirect_to show_website_path(existing_website.id) and return
 		end
 		
 		new_website = Website.create(params[:website])
@@ -70,6 +68,8 @@ class WebsitesController < ApplicationController
 				website.downvote(community)
 			end
 		end
-		redirect_to index_path
+		respond_to do |format|
+      format.json { render :json => [] }
+    end
 	end
 end
