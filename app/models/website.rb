@@ -68,7 +68,6 @@ class Website < ActiveRecord::Base
   	rating.save!
   end
   
-  protected
 	def get_full_url
 		if !(self.url =~ /(http|https):\/\/*/)
 			self.url = "http://" + self.url

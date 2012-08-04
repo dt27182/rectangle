@@ -20,11 +20,19 @@ class WebsitesController < ApplicationController
 			redirect_to display_new_website_path and return
 		end
 		subcategory = category.subcategories[0]
+		new_url = parames[:website][:url]
+		if !(new_url =~ /(http|https):\/\/*/)
+			new_url = "http://" + new_url
+		end
 		new_website = Website.create(params[:website])
 		if new_website.id.nil?
-			flash[:warning] = "Please fill in all the fields"
 			session[:failed_website] = params[:website]
 			session[:failed_category] = params[:category]
+			if !new_website.errors[:url].empty?
+				flash[:warning] = "Please enter in a valid url"
+			else
+				flash[:warning] = "Please fill in all the fields"
+			end
 			redirect_to display_new_website_path and return
 		end
 		subcategory.websites << new_website
