@@ -6,11 +6,6 @@ class Website < ActiveRecord::Base
   validates :name, :description, :presence => true
   validates :url, :presence => true, :uniqueness => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 	before_validation :get_full_url
-	
-	protected
-	def get_full_url
-	end
-  
 
   def get_trending_score(community_name)
   	community = Community.find_by_name(community_name)
