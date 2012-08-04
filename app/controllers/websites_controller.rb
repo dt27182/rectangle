@@ -20,10 +20,20 @@ class WebsitesController < ApplicationController
 			redirect_to display_new_website_path and return
 		end
 		subcategory = category.subcategories[0]
-		new_url = parames[:website][:url]
+		
+		new_url = params[:website][:url]
 		if !(new_url =~ /(http|https):\/\/*/)
 			new_url = "http://" + new_url
 		end
+		
+		existing_website = Website.find_by_url(new_url)
+		if existing_website
+			@existing_website = existing_website
+			session[:failed_website] = params[:website]
+			session[:failed_category] = params[:category]
+			redirect_to display_new_website_path and return
+		end
+		
 		new_website = Website.create(params[:website])
 		if new_website.id.nil?
 			session[:failed_website] = params[:website]
