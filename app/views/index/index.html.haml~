@@ -23,29 +23,29 @@
 				.website_tile
 					= link_to image_tag('shopping.png', :size =>'250x250'), show_category_path("shopping", "trending"), :id=>"shopping_img"
 					#vote
-						= link_to image_tag('arrow-up.png', :size => '30x30'), rate_website_path(website.id, "up"), :id => "upvote"
-						= link_to image_tag('arrow-down.png', :size => '30x30'), rate_website_path(website.id, "down"), :id => "downvote"
+						= link_to image_tag('arrow-up.png', :size => '30x30'), :id => "upvote"
+						= link_to image_tag('arrow-down.png', :size => '30x30'), :id => "downvote"
 					= link_to "Buy Stuff", show_category_path("shopping", "trending"), :id=>"shopping"
 			%li
 				.website_tile
 					= link_to image_tag('productivity.png', :size =>'250x250'), show_category_path("productivity", "trending"), :id=>"productivity_img"
 					#vote
-						= link_to image_tag('arrow-up.png', :size => '30x30'), rate_website_path(website.id, "up"), :id => "upvote"
-						= link_to image_tag('arrow-down.png', :size => '30x30'), rate_website_path(website.id, "down"), :id => "downvote"
+						= link_to image_tag('arrow-up.png', :size => '30x30'), :id => "upvote"
+						= link_to image_tag('arrow-down.png', :size => '30x30'), :id => "downvote"
 					= link_to "Learn Stuff", show_category_path("productivity", "trending"), :id=>"productivity"
 			%li
 				.website_tile
 					= link_to image_tag('entertainment.png', :size =>'250x250'), show_category_path("entertainment", "trending"), :id=>"entertainment_img"
 					#vote
-						= link_to image_tag('arrow-up.png', :size => '30x30'), rate_website_path(website.id, "up"), :id => "upvote"
-						= link_to image_tag('arrow-down.png', :size => '30x30'), rate_website_path(website.id, "down"), :id => "downvote"
+						= link_to image_tag('arrow-up.png', :size => '30x30'), :id => "upvote"
+						= link_to image_tag('arrow-down.png', :size => '30x30'), :id => "downvote"
 					= link_to "Entertaining Stuff", show_category_path("entertainment", "trending"), :id=>"entertainment"
 			%li
 				.website_tile
 					= link_to image_tag('misc.png', :size =>'250x250'), show_category_path("misc", "trending"), :id=>"misc_img"
 					#vote
-						= link_to image_tag('arrow-up.png', :size => '30x30'), rate_website_path(website.id, "up"), :id => "upvote"
-						= link_to image_tag('arrow-down.png', :size => '30x30'), rate_website_path(website.id, "down"), :id => "downvote"
+						= link_to image_tag('arrow-up.png', :size => '30x30'), :id => "upvote"
+						= link_to image_tag('arrow-down.png', :size => '30x30'), :id => "downvote"
 					= link_to "Do Other Stuff", show_category_path("misc", "trending"), :id=>"misc"
 		
 
