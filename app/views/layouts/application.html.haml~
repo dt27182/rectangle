@@ -3,7 +3,7 @@
 	%head
 	
 		%title Rectangle
-		= stylesheet_link_tag 'application'
+		= stylesheet_link_tag 'main'
 		= javascript_include_tag 'application'
 		= csrf_meta_tags
 
@@ -12,13 +12,13 @@
 			#logo
 				= link_to image_tag('rectangle_logo.png'), '/'
 			%ul#links_bar
-				%li
+				%li#disc
 					= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
-				%li
+				%li#submit
 					= link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
-				%li
+				%li#friend
 					= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
-				%li
+				%li#profile
 					= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
 			#user
 				- if @logged_in
@@ -35,6 +35,6 @@
 				
 			= yield
 			
-		%footer
-			=render :partial => "/footer"
+	%footer
+		=render :partial => "/footer"
 

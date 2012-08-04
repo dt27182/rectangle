@@ -18,12 +18,12 @@ html {
 
 a:link {color:#3366FF; text-decoration:none;}    /* unvisited link */
 a:visited {color:#3366FF; text-decoration:none;} /* visited link */
-a:hover {color:#3300FF; text-decoration:underline;}   /* mouse over link */
-a:active {color:#3399FF; text-decoration:underline;}  /* selected link */
+a:hover {color:#3300FF; text-decoration:none;}   /* mouse over link */
+a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 
 body {
 	margin: 0;
-	height: 100%;
+	height: 60%; /* make this 100% if you see stuff below the footer (background leaking through for whatever reason */
 }
 	
 #banner {
@@ -46,9 +46,8 @@ body {
   font-family: Impact, Charcoal, sans-serif; 
 	font-variant:small-caps;
 	font-weight:bold;
-
   width: 200px;
-  background-color:#DCE6F2;
+  background-color:#EDF7F3;
   border: groove 5px #CBD5E1;
 }
 
@@ -63,7 +62,7 @@ body {
 }
 
 #user a:active {
-	background-color: #EDF7F3;
+	background-color: #FEF8F4;
 }
 
 ul#links_bar {
@@ -85,13 +84,13 @@ ul#links_bar {
 }
 
 #links_bar li {
-	float:right;
+	float:left;
 }
 
 #links_bar li a {
 	display:block;
 	width:200px;
-	background-color:#DCE6F2;
+	background-color:#EDF7F3;
 	margin-right: 10px;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -109,7 +108,7 @@ ul#links_bar {
 }
 
 #links_bar li a:active {
-	background-color: #EDF7F3;
+	background-color: #FEF8F4;
 }
 
 .link_bar_link {
@@ -132,10 +131,7 @@ ul#links_bar {
 	height: auto;
 	padding: 30px 25px 50px 25px;
 	border-radius: 50px; /*adjusts the curve on border*/
-	border-top: solid 2px #CCCCCC;
-	border-right: solid 2px #CCCCCC;
-  border-left: solid 2px #CCCCCC;
-	border-bottom: solid 2px #CCCCCC;
+	border: solid 3px #CCCCCC;
 }
 
 #vote {
@@ -250,6 +246,9 @@ footer {
   padding-top: 5px;
   padding-bottom: 10px;
   font-size: 15pt;
+  border-top-style:ridge;
+	border-color: #006699;
+	border-width: 15px;
 }
 
 ul#Legal {

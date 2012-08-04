@@ -1,27 +1,30 @@
-%h2 Enter in the details of the website
+%display_new
+	#statement
+		%h2 Enter New Website Details Below...
 
-= form_tag commit_new_website_path(), :id => "create_website_form", :method => :put, do
+#New_Web_Info
+	= form_tag commit_new_website_path(), :id => "create_website_form", :method => :put, do
 
-	%p
-		= label :website, :name, 'Name:'
-		%br
-		= text_field :website, :name, :class => "required", :value => "#{@failed_website[:name]}"
+		%p
+			= label :website, :name, 'Name:'
+			%br
+			= text_field :website, :name, :class => "required", :value => "#{@failed_website[:name]}"
 		
-	%p
-		= label :website, :url, 'Url:'
-		%br
-		= text_field :website, :url, :class => "required", :value => "#{@failed_website[:url]}"
+		%p
+			= label :website, :url, 'Url:'
+			%br
+			= text_field :website, :url, :class => "required", :value => "#{@failed_website[:url]}"
 		
-	%p
-		= label :category, 'Category:'
-		= select :category, :name, ['shopping', 'productivity', 'entertainment', 'misc'], :selected => "#{@failed_category[:name]}"
+		%p
+			= label :category, 'Category:'
+			= select :category, :name, ['shopping', 'productivity', 'entertainment', 'misc'], :selected => "#{@failed_category[:name]}"
 		
-	%p
-		= label :website, :description,  'A short description of the site:'
-		%br
-		= text_area :website, :description, :class => "required", :value => "#{@failed_website[:description]}", :size => "80x5"
+		%p
+			= label :website, :description,  'A short description of the site:'
+			%br
+			= text_area :website, :description, :class => "required", :value => "#{@failed_website[:description]}", :size => "80x5"
 		
-	%p
-		= submit_tag 'Submit!'
+		%p
+			= submit_tag 'Submit!'
 		
 
