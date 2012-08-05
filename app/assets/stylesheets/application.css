@@ -141,18 +141,18 @@ ul#links_bar {
 	margin-top: 5px;
 }
 
-#upV {
+.upvote {
 	margin-bottom: 10px;
 }
 
-#upV:hover {
+.upvote:hover {
 	opacity:0.3; filter:alpha(opacity=30);
 }
 
-#downV {
+.downvote {
 }
 
-#downV:hover {
+.downvote:hover {
 	opacity:0.3; filter:alpha(opacity=30);
 }
 

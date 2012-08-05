@@ -8,19 +8,26 @@
 //= require jquery_ujs
 //= require_tree .
 function upvote(website_id){
-	$.post("/website/" + website_id + "/rate/up", function(data){});
+	alert("website/" + website_id + "/rate/up");
+	$.post("website/" + website_id + "/rate/up");
 }
 function downvote(website_id){
-	$.post("/website/" + website_id + "/rate/up", function(data){});
+	alert("website/" + website_id + "/rate/down");
+	$.post("website/" + website_id + "/rate/down");
 }
 
 $(document).ready(
-	function(){
-		$.each($(".upvote"), function(index, value){
-			value.click(upvote(value.attr("website_id"));
-		});	
-		$.each($(".downvote"), function(index, value){
-			value.click(downvote(value.attr("website_id"));
-		});	
+	function(){	
+		$("#testdiv").click(function() {
+  		alert("Handler for .click() called.");
+		});
+		$(".upvote").click(function() {
+			//alert($(this).attr("website_id"));
+			upvote($(this).attr("website_id"));
+		});
+		$(".downvote").click(function() {
+			//alert("Handler for .click() called.");
+			downvote($(this).attr("website_id"));
+		});
 	}
 );

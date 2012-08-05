@@ -32,18 +32,18 @@ class Website < ActiveRecord::Base
   	rating.num_upvote = rating.num_upvote + 1
   	time_weight = self.created_at.to_r
   	score = rating.num_upvote - rating.num_downvote
-  	sign = 0
+  	sign = 0.0
   	if score > 0
-  		sign = 1
+  		sign = 1.0
   	else 
   		if score < 0
-  			sign = -1
+  			sign = -1.0
   		else
-  			sign = 0
+  			sign = 0.0
   		end
   	end
-  	rating.trending_score = log10([score.abs, 1].max) + sign * time_weight / 45000
-  	rating.quality_score = rating.num_upvote/(rating.num_upvote + rating.num_downvote)
+  	rating.trending_score = Math.log10([score.abs, 1].max) + sign * time_weight / 45000
+  	rating.quality_score = rating.num_upvote.to_f/(rating.num_upvote + rating.num_downvote)
   	rating.save!
   end
   
@@ -53,18 +53,18 @@ class Website < ActiveRecord::Base
   	rating.num_downvote = rating.num_downvote + 1
   	time_weight = self.created_at.to_r
   	score = rating.num_upvote - rating.num_downvote
-  	sign = 0
+  	sign = 0.0
   	if score > 0
-  		sign = 1
+  		sign = 1.0
   	else 
   		if score < 0
-  			sign = -1
+  			sign = -1.0
   		else
-  			sign = 0
+  			sign = 0.0
   		end
   	end
-  	rating.trending_score = log10([score.abs, 1].max) + sign * time_weight / 45000
-  	rating.quality_score = rating.num_upvote/(rating.num_upvote + rating.num_downvote)
+  	rating.trending_score = Math.log10([score.abs, 1].max) + sign * time_weight / 45000
+  	rating.quality_score = rating.num_upvote.to_f/(rating.num_upvote + rating.num_downvote)
   	rating.save!
   end
   

@@ -4,7 +4,8 @@
 
 	#statement
 		%h2 What's Trending Up...
-
+#testdiv
+	clickme
 #webtiles
 	- if not @websites.empty?
 		%ul#grid
@@ -13,12 +14,10 @@
 					.website_tile
 						= link_to image_tag('placeholder.jpg', :size => '250x250'), show_website_path(website.id), :id => "#{website.name} image"
 						#vote
-							%upvote{:class => "upvote", :website_id => "#{website.id}"}
-								#upV
-									= image_tag('arrow-up.png', :size => '30x30')
-							%downvote{:class => "upvote", :website_id => "#{website.id}"}
-								#downV
-									= image_tag('arrow-down.png', :size => '30x30')
+							%div{:class => "upvote", :website_id => "#{website.id}"}
+								= image_tag('arrow-up.png', :size => '30x30')
+							#div{:class => "downvote", :website_id => "#{website.id}"}
+								= image_tag('arrow-down.png', :size => '30x30')
 						#tile_info
 							= link_to "#{website.name}", website.url, :id => website.name
 							= "(#{Category.find_by_id(Subcategory.find_by_id(website.subcategory_id).category_id).name})"

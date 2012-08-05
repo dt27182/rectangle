@@ -46,9 +46,11 @@ class WebsitesController < ApplicationController
 		subcategory.websites << new_website
 		subcategory.save!
 		Community.find_each do |community|
-			Rating.create!({:website_id => new_website.id, :community_id => community.id, :trending_score => 0, :quality_score => 0})
+			Rating.create!({:website_id => new_website.id, :community_id => community.id, :trending_score => 0, :quality_score => 0, :num_upvote => 0, :num_downvote => 0})
 		end
 		flash[:notice] = "Website successfully submitted!"
+		session[:failed_website] = nil
+		session[:failed_category] = nil
 		redirect_to index_path
 	end
 	
