@@ -6,23 +6,22 @@ class Website < ActiveRecord::Base
   validates :name, :description, :presence => true
   validates :url, :presence => true, :uniqueness => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 	before_validation :get_full_url
-
-  def get_trending_score(community_name)
-  	community = Community.find_by_name(community_name)
-  	return Rating.find_by_website_id_and_community_id(self.id, community.id).trending_score
-  end
-  
-  def get_quality_score(community_name)
-  	community = Community.find_by_name(community_name)
-  	return Rating.find_by_website_id_and_community_id(self.id, community.id).quality_score
-  end
+	
+	def get_rating(community_name)
+		community = Community.find_by_name(community_name)
+  	return Rating.find_by_website_id_and_community_id(self.id, community.id)
+	end
   
   def self.sort_by_trending(community_name)
+  	website_tuple_list = []
   	website_list = []
   	Website.find_each do |website|
-  		website_list << website
+  		website_tuple_list << [website, website.get_rating(community_name)]
   	end
-  	website_list.sort! { |a,b| b.get_trending_score(community_name) <=> a.get_trending_score(community_name) }
+  	website_tuple_list.sort! { |a,b| b[1].trending_score <=> a[1].trending_score }
+  	website_tuple_list.each do |website_tuple|
+  		website_list << [website_tuple[0], website_tuple[1].get_vote_differential]
+  	end
   	return website_list
   end
   
