@@ -18,9 +18,13 @@ $(document).ready(
 	function(){	
 		$(".upvote").click(function() {
 			upvote($(this).attr("website_id"));
+			var current_score = parseInt($(this).parent().children(".score").text());
+			$(this).parent().children(".score").text((current_score + 1).toString());
 		});
 		$(".downvote").click(function() {
 			downvote($(this).attr("website_id"));
+			var current_score = parseInt($(this).parent().children(".score").text());
+			$(this).parent().children(".score").text((current_score - 1).toString());
 		});
 	}
 );
