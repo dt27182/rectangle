@@ -4,7 +4,7 @@ class Website < ActiveRecord::Base
   has_many :ratings
   has_many :communities, :through => :ratings
   validates :name, :description, :presence => true
-  validates :url, :presence => true, :uniqueness => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+  validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 	before_validation :get_full_url
 	
 	def get_rating(community_name)
@@ -68,7 +68,7 @@ class Website < ActiveRecord::Base
   end
   
 	def get_full_url
-		if !(self.url =~ /(http|https):\/\/*/)
+		if !(self.url =~ /(^(http|https):\/\/.*)/)
 			self.url = "http://" + self.url
 		end
 	end

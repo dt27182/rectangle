@@ -21,12 +21,12 @@ class WebsitesController < ApplicationController
 		end
 		subcategory = category.subcategories[0]
 		
-		new_url = params[:website][:url]
-		if !(new_url =~ /(http|https):\/\/*/)
-			new_url = "http://" + new_url
+		params[:website][:url] = params[:website][:url].strip
+		if !(params[:website][:url] =~ /(^(http|https):\/\/.*)/)
+			params[:website][:url] = "http://" + params[:website][:url]
 		end
 		
-		existing_website = Website.find_by_url(new_url)
+		existing_website = Website.find_by_url(params[:website][:url])
 		if existing_website
 			flash[:warning] = "The site you tried to submit already exists. You have been redirected to it's profile page!"
 			redirect_to show_website_path(existing_website.id) and return
