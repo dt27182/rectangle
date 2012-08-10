@@ -2,8 +2,8 @@ To Do:
 1. prevent similar urls from being added(aka amazon.com vs www.amazon.com)
 2. Model level rspec tests
 3. Cucumber tests for index page and website submission
-4. Javascript form validation
 5. Image upload
 
 Issues to discuss:
 1. what score to display
+2. black links are confusing
