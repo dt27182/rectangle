@@ -9,8 +9,8 @@
 
 	%body
 		#banner
-			#logo
-				= link_to image_tag('rectangle_logo.png'), '/'
+			#logo_container
+				= link_to image_tag('logo.png', :id=>'logo'), '/'
 			%ul#links_bar
 				%li#disc
 					= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
