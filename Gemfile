@@ -9,6 +9,7 @@ gem 'rails', '3.2.6'
 gem 'jquery-rails'
 gem 'haml'
 gem 'devise'
+gem 'paperclip', '~> 3.0'
 
 group :development, :test do
   # Pretty printed test output

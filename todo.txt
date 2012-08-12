@@ -3,6 +3,9 @@ To Do:
 2. Model level rspec tests
 3. Cucumber tests for index page and website submission
 5. Image upload
+6. Add another flash message type
+7. Rspec url tests
+8. Deal with banner resizing issues
 
 Issues to discuss:
 1. what score to display

@@ -1,6 +1,7 @@
 class Website < ActiveRecord::Base
   # attr_accessible :title, :body
-  attr_accessible :name, :url, :description
+  attr_accessible :name, :url, :description, :picture
+  has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>"}
   has_many :ratings
   has_many :communities, :through => :ratings
   validates :name, :description, :presence => true

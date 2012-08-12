@@ -12,11 +12,13 @@ class WebsitesController < ApplicationController
 			@failed_category = {:name => "shopping"}
 		end
 	end
+	
 	def commit_new
 		category = Category.find_by_name(params[:category][:name])
 		if category.nil?
 			session[:failed_website] = params[:website]
 			session[:failed_category] = params[:category]
+			params[:website][:picture] = nil
 			redirect_to display_new_website_path and return
 		end
 		subcategory = category.subcategories[0]
@@ -29,6 +31,7 @@ class WebsitesController < ApplicationController
 		existing_website = Website.find_by_url(params[:website][:url])
 		if existing_website
 			flash[:warning] = "The site you tried to submit already exists. You have been redirected to it's profile page!"
+			params[:website][:picture] = nil
 			redirect_to show_website_path(existing_website.id) and return
 		end
 		
@@ -41,6 +44,7 @@ class WebsitesController < ApplicationController
 			else
 				flash[:warning] = "Please fill in all the fields"
 			end
+			params[:website][:picture] = nil
 			redirect_to display_new_website_path and return
 		end
 		subcategory.websites << new_website
@@ -51,10 +55,16 @@ class WebsitesController < ApplicationController
 		flash[:notice] = "Website successfully submitted!"
 		session[:failed_website] = nil
 		session[:failed_category] = nil
+		params[:website][:picture] = nil
 		redirect_to index_path
 	end
 	
 	def show
+		@website = Website.find_by_id(params[:id])
+		if @website.nil?
+			flash[:warning] = "The requested website does not exist"
+			redirect_to index_path
+		end
 	end
 	
 	def rate
