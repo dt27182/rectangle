@@ -31,10 +31,14 @@ body {
 }
 
 
-#logo {
+#logo_container {
 	position: relative;
 	margin-left: 20px;
 	z-index: 0;
+}
+
+#logo {
+  width: 250px;
 }
 
 #user {
