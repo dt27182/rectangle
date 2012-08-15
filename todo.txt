@@ -6,6 +6,7 @@ To Do:
 6. Add another flash message type
 7. Rspec url tests
 8. Deal with banner resizing issues
+9. Think about picture upload validation
 
 Issues to discuss:
 1. what score to display
