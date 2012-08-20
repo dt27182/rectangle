@@ -7,6 +7,9 @@ class Website < ActiveRecord::Base
 	validates_attachment_size :picture, :less_than => (0.6).megabytes
   has_many :ratings
   has_many :communities, :through => :ratings
+  has_many :endorsements
+  has_many :votes
+  belongs_to :user
   validates :name, :description, :presence => true
   validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 	before_validation :get_full_url
