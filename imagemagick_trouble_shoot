@@ -1,0 +1,6 @@
+Imagmagick install trouble shoot guide:
+1. find package name:
+apt-cache search "libname"
+2. soft link desired file name to existing file name
+sudo ln -vs "$(dpkg -L "package-name" | grep -m 1 "package-name".so)" /usr/lib/"desired file name"
+

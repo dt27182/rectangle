@@ -24,7 +24,7 @@
 				- if @logged_in
 					= link_to "Logout", '/logout', :id=>"logout"
 				- else
-					= link_to "Log In / Register", '/login', :id=>"login"
+					= link_to "Log In / Register", new_user_registration_path, :id=>"login"
 			
 		#wrapper
 		

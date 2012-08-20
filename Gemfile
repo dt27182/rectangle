@@ -9,6 +9,10 @@ gem 'rails', '3.2.6'
 gem 'jquery-rails'
 gem 'haml'
 gem 'devise'
+gem 'paperclip', '~> 3.0'
+gem 'aws-sdk'
+gem "dynamic_form"
+gem 'omniauth'
 
 group :test do
   gem 'cucumber-rails'

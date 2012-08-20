@@ -3,8 +3,9 @@
 		%h2 Enter New Website Details Below...
 
 #New_Web_Info
-	= form_tag commit_new_website_path(), :id => "create_website_form", :method => :put, do
-
+	= form_tag commit_new_website_path(), :multipart => true, :id => "create_website_form", :method => :put, do
+		%p
+			= error_messages_for :failed_website
 		%p
 			= label :website, :name, 'Name:'
 			%br
@@ -24,6 +25,10 @@
 			%br
 			= text_area :website, :description, :class => "required", :value => "#{@failed_website[:description]}", :size => "80x5"
 		
+		%p
+			= label :website, :picture, 'Please upload a picture of the website'
+			%br
+			= file_field :website, :picture, :input_type => 'image'
 		%p
 			= submit_tag 'Submit!'
 		

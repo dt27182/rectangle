@@ -1,6 +1,10 @@
 class Website < ActiveRecord::Base
-  # attr_accessible :title, :body
-  attr_accessible :name, :url, :description
+  attr_accessible :name, :url, :description, :picture, 
+                  :picture_file_name, :picture_content_type, 
+                  :picture_file_size, :picture_updated_at
+  has_attached_file :picture, :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/:style/:id/:filename"
+  validates_attachment_presence :picture
+	validates_attachment_size :picture, :less_than => (0.6).megabytes
   has_many :ratings
   has_many :communities, :through => :ratings
   validates :name, :description, :presence => true
