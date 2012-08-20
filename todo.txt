@@ -3,7 +3,11 @@ To Do:
 2. Model level rspec tests
 3. Cucumber tests for index page and website submission
 5. Image upload
+6. Add another flash message type
+7. Rspec url tests
+8. Deal with banner resizing issues
+9. Think about picture upload validation
 
 Issues to discuss:
-1. what score to display
-2. black links are confusing
+1. black links are confusing
+2. picture size limit (1900x1200 => 0.5 MB jpeg)
