@@ -1,14 +1,9 @@
 class WebsitesController < ApplicationController
 	def display_new
-		@failed_website = nil
-		if !(session[:failed_website].nil?)
-			@failed_website = session[:failed_website]
-		else
-			@failed_website = {:name => "", :url => "", :category => "shopping", :description => ""}
+		if @failed_website.nil?
+			@failed_website = Website.new
 		end
-		if !(session[:failed_category].nil?)
-			@failed_category = session[:failed_category]
-		else
+		if @failed_category.nil?
 			@failed_category = {:name => "shopping"}
 		end
 	end
@@ -16,10 +11,10 @@ class WebsitesController < ApplicationController
 	def commit_new
 		category = Category.find_by_name(params[:category][:name])
 		if category.nil?
-			session[:failed_website] = params[:website]
-			session[:failed_category] = params[:category]
 			params[:website][:picture] = nil
-			redirect_to display_new_website_path and return
+			@failed_website = Website.new(params[:website])
+			@failed_category = {:name => "shopping"}
+			render :action => "display_new" and return
 		end
 		subcategory = category.subcategories[0]
 		
@@ -30,31 +25,25 @@ class WebsitesController < ApplicationController
 		
 		existing_website = Website.find_by_url(params[:website][:url])
 		if existing_website
-			flash[:warning] = "The site you tried to submit already exists. You have been redirected to it's profile page!"
+			flash[:warning] = "The site you tried to submit already exists. You have been redirected to it's profile page."
 			params[:website][:picture] = nil
 			redirect_to show_website_path(existing_website.id) and return
 		end
 		
 		new_website = Website.create(params[:website])
-		if new_website.id.nil?
-			session[:failed_website] = params[:website]
-			session[:failed_category] = params[:category]
-			if !new_website.errors[:url].empty?
-				flash[:warning] = "Please enter in a valid url"
-			else
-				flash[:warning] = "Please fill in all the fields"
-			end
+		if !(new_website.errors.empty?)
 			params[:website][:picture] = nil
-			redirect_to display_new_website_path and return
+			@failed_website = new_website
+			@failed_category = params[:category]
+			render :action => "display_new" and return
 		end
+		
 		subcategory.websites << new_website
 		subcategory.save!
 		Community.find_each do |community|
 			Rating.create!({:website_id => new_website.id, :community_id => community.id, :trending_score => 0, :quality_score => 0, :num_upvote => 0, :num_downvote => 0})
 		end
 		flash[:notice] = "Website successfully submitted!"
-		session[:failed_website] = nil
-		session[:failed_category] = nil
 		params[:website][:picture] = nil
 		redirect_to index_path
 	end
