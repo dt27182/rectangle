@@ -1,35 +1,36 @@
 %display_new
-	#statement
-		%h2 Enter New Website Details Below...
+	#web_details_statement
+		%h2 Enter New Website Details Below
 
 #New_Web_Info
 	= form_tag commit_new_website_path(), :multipart => true, :id => "create_website_form", :method => :put, do
-		%p
+		#submission_errors.ite
 			= error_messages_for :failed_website
-		%p
-			= label :website, :name, 'Name:'
-			%br
-			= text_field :website, :name, :class => "required", :value => "#{@failed_website[:name]}"
 		
-		%p
-			= label :website, :url, 'Url:'
+		#website_name.item
+			= label :website, :name, 'Website Name:'
 			%br
-			= text_field :website, :url, :class => "required", :value => "#{@failed_website[:url]}"
+			= text_field :website, :name, :class => "required textfield web_name", :value => "#{@failed_website[:name]}"
 		
-		%p
-			= label :category, 'Category:'
+		#website_url.item
+			= label :website, :url, 'Website Url:'
+			%br
+			= text_field :website, :url, :class => "required textfield web_address", :value => "#{@failed_website[:url]}"
+		
+		#website_category.item
+			= label :category, 'Category Selection:'
+			%br
 			= select :category, :name, ['shopping', 'productivity', 'entertainment', 'misc'], :selected => "#{@failed_category[:name]}"
 		
-		%p
-			= label :website, :description,  'A short description of the site:'
+		#website_description.item
+			= label :website, :description,  'Site Description:'
 			%br
-			= text_area :website, :description, :class => "required", :value => "#{@failed_website[:description]}", :size => "80x5"
+			= text_area :website, :description, :class => "required textfield web_desc", :value => "#{@failed_website[:description]}", :size => "80x7"
 		
-		%p
-			= label :website, :picture, 'Please upload a picture of the website'
+		#website_image.item
+			= label :website, :picture, 'Upload Website Image'
 			%br
-			= file_field :website, :picture, :input_type => 'image'
-		%p
-			= submit_tag 'Submit!'
-		
+			= file_field :website, :picture, :input_type => 'image', :class => "img_file_field"
+		#submit_button.item
+			= submit_tag 'Submit!', :class => "web_submit_button"
 

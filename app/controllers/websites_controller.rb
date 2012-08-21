@@ -50,6 +50,7 @@ class WebsitesController < ApplicationController
 	
 	def show
 		@website = Website.find_by_id(params[:id])
+		@submitter = User.find_by_id(@website.user_id)
 		if @website.nil?
 			flash[:warning] = "The requested website does not exist"
 			redirect_to index_path

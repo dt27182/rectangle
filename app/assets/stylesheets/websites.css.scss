@@ -2,17 +2,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#New_Web_Info {
-	margin-left: 60px;
-}
-
-#statement {
-	padding-top: 10px;
-	margin-left: 60px;
-	font-family: Impact, Charcoal, sans-serif; 
-	font-variant:small-caps;
-}
-
 li#submit a {
 	background-color: #DCE6F2;
 }
+
+#New_Web_Info {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+	height: auto;
+	padding: 75px 50px 75px 50px;
+	border-radius: 100px; /*adjusts the curve on border*/
+	border: solid 5px #CCCCCC;
+	width: 800px;
+}
+
+#web_details_statement {
+	padding-top: 10px;
+	font-size: 20px;
+	text-align: center;
+	font-family: Charcoal, Arial, sans-serif; 
+	font-variant:small-caps;
+}
+
+.textfield {
+	background: #EEEEEE;
+	border: 3px ridge #0077EE;
+	padding: 20px 10px 20px 10px;
+	width: 100%;
+	font-size: 20pt; 
+  font-family: Helvetica; 
+  text-align: center;
+}
+
+.item {
+	padding-bottom: 20px;
+}
+
+.web_desc {
+	text-align: left;
+	font-size: 15pt;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#website_category {
+	overflow: hidden;
+	background: url(new_arrow.png) no-repeat right;
+}
+
+#website_category select {
+	background: #EEEEEE;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+	font-size: 20pt; 
+  font-family: Helvetica; 
+  font-variant:small-caps;
+  text-align: center;
+	border: 3px ridge #0077EE;
+  height: auto;
+}
+
+.img_file_field {
+	background: #EEEEEE;
+	font-size: 18pt; 
+  font-family: Helvetica; 
+  font-variant:small-caps;
+	border: 3px ridge #0077EE;
+}
+
+#submit_button {
+	position:relative;
+	top: 40px;
+	text-align: center;
+}
+
+.web_submit_button {
+	background: #EEEEEE;
+	box-shadow: 2px 2px 6px;
+  width: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+	font-size: 20pt; 
+  font-family: Helvetica; 
+  font-variant:small-caps;
+	border: 3px ridge #0077EE;
+  height: auto;	
+}
+
+
+
