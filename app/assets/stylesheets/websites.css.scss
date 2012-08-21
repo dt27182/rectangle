@@ -81,7 +81,7 @@ li#submit a {
 
 .web_submit_button {
 	background: #EEEEEE;
-	box-shadow: 2px 2px 6px;
+	box-shadow: 2px 2px 4px;
   width: 15%;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -92,5 +92,14 @@ li#submit a {
   height: auto;	
 }
 
+.web_submit_button:hover{
+	background-color: #DCE6F2;
+	opacity:0.8; filter:alpha(opacity=30);
+}
+
+.web_submit_button:active{
+	background-color: #55AAEE;
+	opacity:0.8; filter:alpha(opacity=30);
+}
 
 
