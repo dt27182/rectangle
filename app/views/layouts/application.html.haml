@@ -21,10 +21,10 @@
 				%li#profile
 					= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
 			#user
-				- if @logged_in
-					= link_to "Logout", '/logout', :id=>"logout"
+				- if user_signed_in?
+					= link_to "Logout", destroy_user_session_path, :method => :delete, :id=>"logout"
 				- else
-					= link_to "Log In / Register", new_user_registration_path, :id=>"login"
+					= link_to "Log In / Register", new_user_session_path, :id=>"login"
 			
 		#wrapper
 		
