@@ -1,1 +1,23 @@
-= image_tag("#{@website.picture.url}")
+%website
+
+#website_information
+
+	#website_name
+		= @website.name
+		
+	#website_url
+		= @website.url
+		
+	#website_img
+		= image_tag("#{@website.picture.url}")
+	
+	#website_desc
+		= @website.description
+
+	#website_submitter
+		= "#{@submitter.email}, maybe we should take this out or have unique usernames"
+		= link_to "Submitter Profile", show_profile_path(@submitter.id), :id=>"submitter_profile_link"
+
+
+
+
