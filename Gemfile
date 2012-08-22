@@ -12,7 +12,7 @@ gem 'devise'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
 gem "dynamic_form"
-gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :test do
   gem 'cucumber-rails'
