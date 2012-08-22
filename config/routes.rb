@@ -27,4 +27,6 @@ Rectangle::Application.routes.draw do
   put '/websites/new' => 'websites#commit_new', :as => :commit_new_website
   #route to rate website
   post '/website/:id/rate/:type' => 'websites#rate', :as => :rate_website
+  #omniauth callback
+  match '/auth/:provider/callback' => 'omniauthlogin#create'
 end

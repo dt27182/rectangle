@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   has_many :endorsements
   has_many :websites
   has_many :votes
+  has_many :omniauthlogins
 end
