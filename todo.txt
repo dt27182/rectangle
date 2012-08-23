@@ -11,3 +11,4 @@ To Do:
 Issues to discuss:
 1. black links are confusing
 2. picture size limit (1900x1200 => 0.5 MB jpeg)
+3. display just recent upvotes or all recent activities?

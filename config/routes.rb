@@ -1,4 +1,5 @@
 Rectangle::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   devise_for :users
 	root :to => 'index#index'
   # The priority is based upon order of creation:
@@ -19,7 +20,7 @@ Rectangle::Application.routes.draw do
 	get '/website/:id/comments/new' => 'comments#display_new', :as => :display_new_comment
 	put '/website/:id/comments/new' => 'comments#commit_new', :as => :commit_new_comment
 	#page to create reply for a existing comment
-	get '/comment/:id/comments/new' => 'comments#disply_new_reply', :as => :display_new_reply
+	get '/comment/:id/comments/new' => 'comments#display_new_reply', :as => :display_new_reply
 	put '/comment/:id/comments/new' => 'comments#commit_new_reply', :as => :commit_new_reply
 	#page to input new website
 	get '/websites/new' => 'websites#display_new', :as => :display_new_website
@@ -27,6 +28,4 @@ Rectangle::Application.routes.draw do
   put '/websites/new' => 'websites#commit_new', :as => :commit_new_website
   #route to rate website
   post '/website/:id/rate/:type' => 'websites#rate', :as => :rate_website
-  #omniauth callback
-  match '/auth/:provider/callback' => 'omniauthlogin#create'
 end
