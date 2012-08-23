@@ -1,5 +1,5 @@
 class Website < ActiveRecord::Base
-  attr_accessible :name, :url, :description, :picture, 
+  attr_accessible :name, :url, :description, :picture, :user_id, 
                   :picture_file_name, :picture_content_type, 
                   :picture_file_size, :picture_updated_at
   has_attached_file :picture, :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/:style/:id/:filename"

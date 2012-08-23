@@ -157,12 +157,22 @@ ul#links_bar {
 	opacity:0.3; filter:alpha(opacity=30);
 }
 
-.downvote {
-}
-
 .downvote:hover {
 	opacity:0.3; filter:alpha(opacity=30);
 }
+
+.upvote_not_signed_in {
+	margin-bottom: 10px;
+}
+
+.upvote_not_signed_in:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+.downvote_not_signed_in:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
 .score {
 	margin-top: -12px;
 	margin-bottom: -4px;
