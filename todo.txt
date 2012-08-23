@@ -7,6 +7,7 @@ To Do:
 7. Rspec url tests
 8. Deal with banner resizing issues
 9. Think about picture upload validation
+10. Footer floats when no websites are displayed
 
 Issues to discuss:
 1. black links are confusing

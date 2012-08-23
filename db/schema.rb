@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822055450) do
+ActiveRecord::Schema.define(:version => 20120823014059) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -39,14 +39,6 @@ ActiveRecord::Schema.define(:version => 20120822055450) do
     t.integer  "website_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "omniauthlogins", :force => true do |t|
-    t.string   "provider"
-    t.integer  "provider_uid"
-    t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "ratings", :force => true do |t|
