@@ -2,11 +2,8 @@
 
 #website_information
 
-	#website_name
-		= @website.name
-		
-	#website_url
-		= @website.url
+	#website_name_address
+		= link_to "#{@website.name}", @website.url, :id => "website_link"
 		
 	#website_img
 		= image_tag("#{@website.picture.url}")

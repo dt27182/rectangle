@@ -1,0 +1,28 @@
+%profile
+
+#profile_page
+	#user_email
+		= @user.email
+		
+	#user_votes
+		%ul#dropdown
+			%li
+				= "Recently Upvoted"
+				%ul
+					- @upvotes.each do |upvote|
+						%li
+							= link_to "#{upvote.name}", upvote.url
+		
+		%ul#dropdown
+			%li
+				= "Recently Downvoted"
+				%ul
+					- @downvotes.each do |downvote|
+						%li
+							= link_to "#{downvote.name}", downvote.url
+
+	#user_endorsements	
+		=render :partial => "/webtiles"
+		
+		
+
