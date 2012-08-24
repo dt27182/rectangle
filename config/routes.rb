@@ -28,4 +28,9 @@ Rectangle::Application.routes.draw do
   put '/websites/new' => 'websites#commit_new', :as => :commit_new_website
   #route to rate website
   post '/website/:id/rate/:type' => 'websites#rate', :as => :rate_website
+  
+  #route to endorse website
+  post '/website/:id/endorse' => 'website#endorse', :as => :endorse_website
+  #route to unendorse website
+  post '/website/:id/unendorse' => 'website#unendorse', :as => :unendorse_website
 end
