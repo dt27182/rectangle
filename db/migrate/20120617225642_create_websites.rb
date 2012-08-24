@@ -8,6 +8,6 @@ class CreateWebsites < ActiveRecord::Migration
     end
   end
   def down
-  	drop_table :postings
+  	drop_table :websites
   end
 end

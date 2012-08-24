@@ -1,5 +1,5 @@
 class Website < ActiveRecord::Base
-  attr_accessible :name, :url, :description, :picture, 
+  attr_accessible :name, :url, :description, :picture, :user_id, 
                   :picture_file_name, :picture_content_type, 
                   :picture_file_size, :picture_updated_at
   has_attached_file :picture, :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/:style/:id/:filename"
@@ -7,6 +7,9 @@ class Website < ActiveRecord::Base
 	validates_attachment_size :picture, :less_than => (0.6).megabytes
   has_many :ratings
   has_many :communities, :through => :ratings
+  has_many :endorsements
+  has_many :votes
+  belongs_to :user
   validates :name, :description, :presence => true
   validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
 	before_validation :get_full_url
@@ -25,6 +28,27 @@ class Website < ActiveRecord::Base
   	website_tuple_list.sort! { |a,b| b[1].trending_score <=> a[1].trending_score }
   	website_tuple_list.each do |website_tuple|
   		website_list << [website_tuple[0], website_tuple[1].get_vote_differential]
+  	end
+  	return website_list
+  end
+  
+  def self.sort_by_quality(community_name)
+  	website_tuple_list = []
+  	website_list = []
+  	Website.find_each do |website|
+  		website_tuple_list << [website, website.get_rating(community_name)]
+  	end
+  	website_tuple_list.sort! { |a,b| b[1].quality_score <=> a[1].quality_score }
+  	website_tuple_list.each do |website_tuple|
+  		website_list << [website_tuple[0], website_tuple[1].get_vote_differential]
+  	end
+  	return website_list
+  end
+  
+  def self.sort_by_newest(community_name)
+  	website_list = []
+  	Website.find(:all, :order => "created_at desc").each do |website|
+  		website_list << [website, website.get_rating(community_name).get_vote_differential]
   	end
   	return website_list
   end

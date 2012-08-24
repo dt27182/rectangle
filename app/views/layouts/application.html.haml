@@ -10,7 +10,7 @@
 	%body
 		#banner
 			#logo_container
-				= link_to image_tag('logo.png', :id=>'logo'), '/'
+				= link_to image_tag('rectangle_logo.png', :id=>'logo', :size=>'550x100'), '/'
 			%ul#links_bar
 				%li#disc
 					= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
@@ -19,13 +19,20 @@
 				%li#friend
 					= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
 				%li#profile
-					= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
+					- if user_signed_in?
+						= link_to "Profile", show_profile_path(current_user.id), :class=>"link_bar_link"
+					- else
+						= link_to "Profile", new_user_path, :id=>"profile", :class=>"link_bar_link"
 			#user
-				- if @logged_in
-					= link_to "Logout", '/logout', :id=>"logout"
+				- if user_signed_in?
+					= link_to "Logout", destroy_user_session_path, :method => :delete, :id=>"logout"
 				- else
-					= link_to "Log In / Register", '/login', :id=>"login"
+					= link_to "Log In / Register", new_user_session_path, :id=>"login"
 			
+			- if user_signed_in?
+				#user_name_front
+					= "Welcome, #{current_user.email}"
+					
 		#wrapper
 		
 			- if flash[:notice]

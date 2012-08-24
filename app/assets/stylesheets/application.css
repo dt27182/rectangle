@@ -7,7 +7,7 @@
 */
 
 html {
-	height: 100%;
+	/*height: 100%;*/
 	/*background-image: url('background.jpg');*/
 	background-color: #DCE6F2;
 	background-repeat:no-repeat;
@@ -23,17 +23,19 @@ a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 
 body {
 	margin: 0;
-	height: 100%; /* make this 100% if you see stuff below the footer (background leaking through for whatever reason */
+	/*height: 100%;*/
 }
 	
 #banner {
   background-color: #FFFFFF;
-  height: 112px;
+  height: 113px;
 }
 
 
 #logo_container {
 	position: relative;
+	padding-top: 7px;
+	padding-bottom: 10px;
 	margin-left: 20px;
 	z-index: 0;
 }
@@ -48,11 +50,11 @@ body {
   top: 10px;
   right: 35px;
   text-align: center;
-  font-family: Impact, Charcoal, sans-serif; 
+  font-family: Charcoal, Arial, sans-serif; 
 	font-variant:small-caps;
 	font-weight:bold;
   width: 200px;
-  background-color:#EDF7F3;
+  background-color:#DCE6F2;
   border: groove 5px #CBD5E1;
 }
 
@@ -70,19 +72,29 @@ body {
 	background-color: #FEF8F4;
 }
 
+#user_name_front {
+  position: absolute;
+  float: right;
+  top: 10px;
+  right: 255px;
+  text-align: center;
+  font-family: Charcoal, Arial, sans-serif; 
+	font-variant:small-caps;
+	font-weight:bold;
+  width: 420px;
+  background-color:#DCE6F2;
+  border: groove 5px #CBD5E1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  word-spacing: 3px;
+}
+
 ul#links_bar {
   position: absolute;
   top: 48px;
   right: 25px;
   text-align: center;
-  //margin-top: 30px;
-  //margin-bottom: 30px;
-  //padding-top: 10px;
-  //padding-bottom: 10px;
   width: 880px;
-  //background: #FFFFFF;
-  //border-radius: 5px;
-  //border: solid 5px #DCE6F2;
   word-spacing: 50px;
   list-style-type:none;
 	overflow:hidden;
@@ -95,7 +107,7 @@ ul#links_bar {
 #links_bar li a {
 	display:block;
 	width:200px;
-	background-color:#EDF7F3;
+	background-color:#DCE6F2;
 	margin-right: 10px;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -119,7 +131,7 @@ ul#links_bar {
 .link_bar_link {
   //text-transform:uppercase;
   word-spacing: 3px;
-  font-family: Impact, Charcoal, sans-serif; 
+  font-family: Charcoal, Arial, sans-serif; 
 	font-variant:small-caps;
 	font-weight:bold;
 }
@@ -155,23 +167,35 @@ ul#links_bar {
 	opacity:0.3; filter:alpha(opacity=30);
 }
 
-.downvote {
-}
-
 .downvote:hover {
 	opacity:0.3; filter:alpha(opacity=30);
 }
+
+.upvote_not_signed_in {
+	margin-bottom: 10px;
+}
+
+.upvote_not_signed_in:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+.downvote_not_signed_in:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
 .score {
 	margin-top: -12px;
 	margin-bottom: -4px;
 	color: #CC6611
 }
+
 #tile_info {
 	position: absolute;
 	margin-left: 60px;
 	margin-top: 20px;
 }
 
+/*webtile grid stuff below*/
 ul#grid {
 	position: relative;
 	padding: 0;
@@ -197,9 +221,10 @@ ul#grid {
 #grid li a:hover img {
 	opacity:0.3; filter:alpha(opacity=30);
 }
+/*end webtile grid stuff*/
 
 #wrapper {  /*this includes the yield, basically this is the main body*/
-	height: 100%;
+	/*height: 100%;*/
 }
 
 #notice {
@@ -253,7 +278,16 @@ footer {
 }
 
 footer a:link {
-	color:black;
+	color: black;
+}
+footer a:visited {
+	color: black;
+}
+footer a:hover {
+	color: #3366FF;
+}
+footer a:active {
+	color: #CC6611;
 }
 
 ul#Legal {
