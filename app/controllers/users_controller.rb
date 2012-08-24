@@ -7,14 +7,18 @@ class UsersController < ApplicationController
 		end
 		@upvotes = []
 		@downvotes = []
+		@votedsites = []
 		@votes = @user.votes
+=begin
 		@votes.each do |vote|
+			@votedsites << Website.find_by_id(vote.website_id)
 			if vote.vote_type == 0
 				@downvotes << Website.find_by_id(vote.website_id)
 			elsif vote.vote_type == 1
 				@upvotes << Website.find_by_id(vote.website_id)
 			end
 		end
+=end
 	end
 	
 	def new

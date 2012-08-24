@@ -98,67 +98,73 @@
 	opacity:0.8; filter:alpha(opacity=30);
 }
 
-/*hover dropdown menus tutorial copy pasta from http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ */
-#dropdown {
-	list-style:none;
-	font-weight:bold;
-	margin-bottom:10px;
-	/* Clear floats */
-	float:left;
-	width:100%;
-	/* Bring the nav above everything else--uncomment if needed.
-	position:relative;
-	z-index:5;
-	*/
+
+#website_name_address {
+	font-size: 25pt; 
+  font-family: Charcoal, Arial, sans-serif;
+  font-weight:bold;
+  margin-left: 60px;
+  margin-top: 50px;
 }
-#dropdown li{
-	float:left;
-	margin-right:10px;
-	position:relative;
+
+#website_img_container {
+	position: relative;
+	float: right;
+	top: -50px;
+	right: 50px;
+	margin-left: 100px;
 }
-#dropdown a{
+
+#website_img {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: #FFFFFF;
+	height: auto;
+	padding: 40px 40px 40px 40px;
+	border-radius: 50px; /*adjusts the curve on border*/
+	border: solid 3px #CCCCCC;
+	
+}
+
+#website_desc {
+	font-size: 16pt; 
+  font-family: Helvetica, sans-serif;
+  margin-left: 60px;
+  margin-top: 20px;
+
+}
+
+#website_submitter {
+	font-size: 14pt; 
+  font-family: Helvetica, sans-serif;
+  margin-left: 60px;
+  margin-top: 20px;
+  font-weight:bold;
+}
+
+#endorse_link a {
+	position: relative;
+	font-size: 18pt; 
+  font-family: Helvetica, sans-serif;
+  margin-left: 60px;
+  margin-top: 20px;
+  font-weight:bold;
+  text-align: center;
+  width: 200px;
 	display:block;
-	padding:5px;
-	color:#fff;
-	background:#333;
-	text-decoration:none;
-}
-#dropdown a:hover{
-	color:#fff;
-	background:#6b0c36;
-	text-decoration:underline;
+	border: 3px ridge #0077EE;
+	padding: 10px;
+	background-color: #FFFFFF;
 }
 
-/*--- DROPDOWN ---*/
-#dropdown ul{
-	background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
-	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
-	list-style:none;
-	position:absolute;
-	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
-}
-#dropdown ul li{
-	padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
-	float:none;
-}
-#dropdown ul a{
-	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
-}
-#dropdown li:hover ul{ /* Display the dropdown on hover */
-	left:0; /* Bring back on-screen when needed */
-}
-#dropdown li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-	background:#111111; /*background color of dropdown elements */
-	text-decoration:underline;
-}
-#dropdown li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
-	text-decoration:none;
-}
-#dropdown li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-	background:#333;
+#endorse_link a:hover{
+	background-color: #CBD5E1;
+	opacity:0.8; filter:alpha(opacity=30);
 }
 
-
-
-
+#endorse_link a:active{
+	background-color: #FFDDAA;
+	opacity:0.8; filter:alpha(opacity=30);
+}
 
