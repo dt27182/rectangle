@@ -14,12 +14,12 @@
 						- if vote.vote_type == 0
 							%li
 								#feed_arrow
-									= image_tag('arrow-up.png', :size => '30x30')
+									= image_tag('arrow-down.png', :size => '30x30')
 								= link_to "#{Website.find_by_id(vote.website_id).name}", Website.find_by_id(vote.website_id).url
 						- elsif vote.vote_type == 1
 							%li
 								#feed_arrow
-									= image_tag('arrow-down.png', :size => '30x30')
+									= image_tag('arrow-up.png', :size => '30x30')
 								= link_to "#{Website.find_by_id(vote.website_id).name}", Website.find_by_id(vote.website_id).url
 
 		
