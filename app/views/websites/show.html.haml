@@ -4,16 +4,12 @@
 
 	#website_name_address
 		= link_to "#{@website.name}", @website.url, :id => "website_link"
-		
-	#website_img
-		= image_tag("#{@website.picture.url}")
+	#website_img_container	
+		#website_img
+			= image_tag("#{@website.picture.url}", :size=>'500x500')
 	
 	#website_desc
 		= @website.description
-
-	#website_submitter
-		= "#{@submitter.email}, maybe we should take this out or have unique usernames"
-		= link_to "Submitter Profile", show_profile_path(@submitter.id), :id=>"submitter_profile_link"
 	
 	#endorse_link
 		- if user_signed_in?
@@ -24,5 +20,5 @@
 		- else
 			= link_to "Endorse!", endorse_website_path, :method => :post
 
-
-
+	#website_submitter
+		= link_to "Website Submitter Profile", show_profile_path(@submitter.id), :id=>"submitter_profile_link"
