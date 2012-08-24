@@ -14,7 +14,15 @@
 	#website_submitter
 		= "#{@submitter.email}, maybe we should take this out or have unique usernames"
 		= link_to "Submitter Profile", show_profile_path(@submitter.id), :id=>"submitter_profile_link"
-
+	
+	#endorse_link
+		- if user_signed_in?
+			- if @is_endorsed
+				= link_to "Unendorse", unendorse_website_path(@website.id)
+			- else
+				= link_to "Endorse!", endorse_website_path(@website.id)
+		- else
+			= link_to "Endorse!", new_user_session_path
 
 
 

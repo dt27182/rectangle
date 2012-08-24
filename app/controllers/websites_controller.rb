@@ -60,6 +60,11 @@ class WebsitesController < ApplicationController
 	def show
 		@website = Website.find_by_id(params[:id])
 		@submitter = User.find_by_id(@website.user_id)
+		if user_signed_in?
+			@is_endorsed = !Endorsement.find_by_user_id_and_website_id(current_user.id, @website.id).nil?
+		else
+			@is_endorsed = false
+		end
 		if @website.nil?
 			flash[:warning] = "The requested website does not exist"
 			redirect_to index_path
@@ -71,24 +76,72 @@ class WebsitesController < ApplicationController
 			rate_type = params[:type]
 			communities = ["default"]
 			website = Website.find_by_id(params[:id])
-			vote = nil
-			if rate_type == "up"
-				communities.each do |community|
-					website.upvote(community)
+			vote = Vote.find_by_user_id_and_website_id(current_user.id, website.id)
+			if vote.nil?
+				if rate_type == "up"
+					communities.each do |community|
+						website.upvote(community)
+					end
+					vote = Vote.new({:vote_type => 1})
+				else
+					communities.each do |community|
+						website.downvote(community)
+					end
+					vote = Vote.new({:vote_type => 0})
 				end
-				vote = Vote.new({:vote_type => 1})
+				current_user.votes << vote
+				website.votes << vote
+				vote.save!
+				respond_to do |format|
+				  format.json { render :json => {} }
+				end
 			else
-				communities.each do |community|
-					website.downvote(community)
+				respond_to do |format|
+				  format.json { render :json => {:status => "rejected"} }
 				end
-				vote = Vote.new({:vote_type => 0})
 			end
-			current_user.votes << vote
-			website.votes << vote
-			vote.save!
-			respond_to do |format|
-		    format.json { render :json => [] }
-		  end
+		end
+	end
+	
+	def endorse
+		if user_signed_in?
+			website = Website.find_by_id(params[:id])
+			if website.nil?
+				flash[:warning] = "The requested website does not exist"
+				redirect_to index_path and return
+			end
+			endorsement = Endorsement.find_by_user_id_and_website_id(current_user.id, website.id)
+			if endorsement.nil?
+				Endorsement.create!({:user_id => current_user.id, :website_id => website.id})
+				flash[:notice] = "This website has been added to your endorsements"
+				redirect_to show_website_path(params[:id])
+			else
+				flash[:warning] = "You have already endorsed the website"
+				redirect_to show_website_path(params[:id])
+			end
+		else
+			redirect_to new_user_session_path
+		end
+	end
+	
+	def unendorse
+		if user_signed_in?
+			website = Website.find_by_id(params[:id])
+			if website.nil?
+				flash[:warning] = "The requested website does not exist"
+				redirect_to index_path and return
+			end
+			endorsement = Endorsement.find_by_user_id_and_website_id(current_user.id, website.id)
+			if endorsement.nil?
+				flash[:warning] = "You have not endorsed this website"
+				redirect_to show_website_path(params[:id])
+			else
+				endorsement.destroy
+				flash[:notice] = "You have successfully unendorsed this website"
+				redirect_to show_website_path(params[:id])
+			end
+		else
+			redirect_to new_user_session_path
 		end
 	end
 end
