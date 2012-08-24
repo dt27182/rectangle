@@ -22,7 +22,7 @@
 					- if user_signed_in?
 						= link_to "Profile", show_profile_path(current_user.id), :class=>"link_bar_link"
 					- else
-						= link_to "Profile", new_user_session_path, :id=>"profile", :class=>"link_bar_link"
+						= link_to "Profile", new_user_path, :id=>"profile", :class=>"link_bar_link"
 			#user
 				- if user_signed_in?
 					= link_to "Logout", destroy_user_session_path, :method => :delete, :id=>"logout"

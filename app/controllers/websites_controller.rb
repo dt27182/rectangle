@@ -8,7 +8,7 @@ class WebsitesController < ApplicationController
 				@failed_category = {:name => "shopping"}
 			end
 		else
-			redirect_to new_user_session_path
+			deny_access
 		end
 	end
 	
@@ -53,7 +53,7 @@ class WebsitesController < ApplicationController
 			params[:website][:picture] = nil
 			redirect_to index_path
 		else
-			redirect_to new_user_session_path
+			deny_access
 		end
 	end
 	
@@ -120,7 +120,7 @@ class WebsitesController < ApplicationController
 				redirect_to show_website_path(params[:id])
 			end
 		else
-			redirect_to new_user_session_path
+			deny_access_and_come_back_to(show_website_path(params[:id]))
 		end
 	end
 	
@@ -141,7 +141,7 @@ class WebsitesController < ApplicationController
 				redirect_to show_website_path(params[:id])
 			end
 		else
-			redirect_to new_user_session_path
+			deny_access_and_come_back_to(show_website_path(params[:id]))
 		end
 	end
 end

@@ -16,4 +16,12 @@ class UsersController < ApplicationController
 			end
 		end
 	end
+	
+	def new
+		if user_signed_in?
+			redirect_to show_profile_path(current_user.id)
+		else
+			deny_access
+		end
+	end
 end

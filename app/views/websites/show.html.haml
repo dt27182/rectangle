@@ -22,7 +22,7 @@
 			- else
 				= link_to "Endorse!", endorse_website_path(@website.id), :method => :post
 		- else
-			= link_to "Endorse!", new_user_session_path, :method => :post
+			= link_to "Endorse!", endorse_website_path, :method => :post
 
 
 

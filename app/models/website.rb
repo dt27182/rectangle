@@ -32,6 +32,27 @@ class Website < ActiveRecord::Base
   	return website_list
   end
   
+  def self.sort_by_quality(community_name)
+  	website_tuple_list = []
+  	website_list = []
+  	Website.find_each do |website|
+  		website_tuple_list << [website, website.get_rating(community_name)]
+  	end
+  	website_tuple_list.sort! { |a,b| b[1].quality_score <=> a[1].quality_score }
+  	website_tuple_list.each do |website_tuple|
+  		website_list << [website_tuple[0], website_tuple[1].get_vote_differential]
+  	end
+  	return website_list
+  end
+  
+  def self.sort_by_newest(community_name)
+  	website_list = []
+  	Website.find(:all, :order => "created_at desc").each do |website|
+  		website_list << [website, website.get_rating(community_name).get_vote_differential]
+  	end
+  	return website_list
+  end
+  
   def upvote(community_name)
   	community = Community.find_by_name(community_name)
   	rating = Rating.find_by_website_id_and_community_id(self.id, community.id)
