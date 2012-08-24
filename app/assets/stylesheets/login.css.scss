@@ -3,5 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #facebook_login {
-  padding-left: 200px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 53px;
+  background: #FFFFFF;
+	height: auto;
+	padding: 30px 25px 85px 25px;
+	border-radius: 50px; /*adjusts the curve on border*/
+	border: solid 3px #CCCCCC;
+	width: 300px;
+	font-size: 20px;
+	text-align: center;
+	font-family: Charcoal, Arial, sans-serif; 
+	font-variant:small-caps;
+}
+
+#facebook_login_link {
+	
+}
+
+#facebook_login_link a {
+	position: relative;
+	display:block;
+	top: 25px;
+	border: 3px ridge #0077EE;
+	padding: 10px;
+}
+
+.facebook_link_button:hover{
+	background-color: #DCE6F2;
+	opacity:0.8; filter:alpha(opacity=30);
+}
+
+.facebook_link_button:active{
+	background-color: #FFDDAA;
+	opacity:0.8; filter:alpha(opacity=30);
 }
