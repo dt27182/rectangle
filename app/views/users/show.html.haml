@@ -9,17 +9,17 @@
 			%li
 				= "Recently Upvoted"
 				%ul
-					- @upvotes.each do |upvote|
+					- @upvotes.each do |upvoted_website|
 						%li
-							= link_to "#{upvote.name}", upvote.url
+							= link_to "#{upvoted_website.name}", upvoted_website.url
 		
 		%ul#dropdown
 			%li
 				= "Recently Downvoted"
 				%ul
-					- @downvotes.each do |downvote|
+					- @downvotes.each do |downvoted_website|
 						%li
-							= link_to "#{downvote.name}", downvote.url
+							= link_to "#{downvoted_website.name}", downvoted_website.url
 
 	#user_endorsements	
 		=render :partial => "/webtiles"

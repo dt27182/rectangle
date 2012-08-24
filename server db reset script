@@ -3,6 +3,9 @@ Subcategory.delete_all
 Website.delete_all
 Rating.delete_all
 Community.delete_all
+User.delete_all
+Vote.delete_all
+Endorsement.delete_all
 
 Community.create!({:name => "default"})
 
