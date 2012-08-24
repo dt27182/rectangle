@@ -22,4 +22,4 @@
 					#tile_info
 						= link_to "#{website[0].name}", website[0].url, :id => website[0].name
 						= "(#{Category.find_by_id(Subcategory.find_by_id(website[0].subcategory_id).category_id).name})"
-		#webtiles_end
+		#end_float

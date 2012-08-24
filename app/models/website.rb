@@ -5,15 +5,17 @@ class Website < ActiveRecord::Base
   has_attached_file :picture, :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/:style/:id/:filename"
   validates_attachment_presence :picture
 	validates_attachment_size :picture, :less_than => (0.6).megabytes
+	validates_attachment_content_type :picture, :content_type => ['image/jpg','image/jpeg', 'image/png', 'image/tiff', 'image/gif', 'image/pjepg', 'image/x-png']
+  validates :name, :description, :presence => true
+  validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
+	before_validation :get_full_url
+		
   has_many :ratings
   has_many :communities, :through => :ratings
   has_many :endorsements
   has_many :votes
   belongs_to :user
-  validates :name, :description, :presence => true
-  validates :url, :presence => true, :uri => { :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix }
-	before_validation :get_full_url
-	
+  
 	def get_rating(community_name)
 		community = Community.find_by_name(community_name)
   	return Rating.find_by_website_id_and_community_id(self.id, community.id)

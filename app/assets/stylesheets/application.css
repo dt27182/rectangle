@@ -270,11 +270,7 @@ ul#grid {
 	opacity:0.3; filter:alpha(opacity=30);
 }
 
-#webtiles_end {
-	clear: left;
-}
 /*end webtile grid stuff*/
-
 
 #footer {
 	width: 100%;
@@ -319,4 +315,7 @@ ul#Help {
 	bottom: 10px;
 }
 
+#end_float {
+	clear: both;
+}
 

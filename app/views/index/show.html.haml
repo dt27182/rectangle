@@ -1,6 +1,14 @@
 %index
-	#statement
-		%h2 What's Trending Up...
+	#sort_type
+		%ul
+			%li
+				%ul
+					%li
+						= link_to "trending", index_show_path("trending")
+					%li
+						= link_to "quality", index_show_path("quality")
+					%li
+						= link_to "newest", index_show_path("newest")
 %website_tiles
 	= render :partial => "/webtiles"
 	

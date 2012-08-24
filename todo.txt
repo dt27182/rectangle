@@ -5,10 +5,7 @@ To Do:
 4. Add another flash message type
 5. Rspec url tests
 6. Deal with banner resizing issues
-7. Think about picture upload validation
-8. Footer floats when no websites are displayed
 9. Website description has unnecessary whitespace stripping somewhere
-10. User picture upload
 11. Grab User Name from facebook/google/twitter?
 12. Expose filter options in view
 
