@@ -8,7 +8,7 @@
 //= require jquery_ujs
 //= require_tree .
 function upvote(website_id, up_arrow){
-	$.post("website/" + website_id + "/rate/up", {}, function(data){
+	$.post("/website/" + website_id + "/rate/up", {}, function(data){
 		if($.isEmptyObject(data.status)){
 			var current_score = parseInt(up_arrow.parent().children(".score").text());
 			up_arrow.parent().children(".score").text((current_score + 1).toString());
@@ -18,7 +18,7 @@ function upvote(website_id, up_arrow){
 	}, "json");
 }
 function downvote(website_id, down_arrow){
-	$.post("website/" + website_id + "/rate/down", {}, function(data){
+	$.post("/website/" + website_id + "/rate/down", {}, function(data){
 		if($.isEmptyObject(data.status)){
 			var current_score = parseInt(down_arrow.parent().children(".score").text());
 			down_arrow.parent().children(".score").text((current_score - 1).toString());

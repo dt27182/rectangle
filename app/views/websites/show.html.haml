@@ -18,7 +18,7 @@
 			- else
 				= link_to "Endorse!", endorse_website_path(@website.id), :method => :post
 		- else
-			= link_to "Endorse!", new_user_session_path, :method => :post
+			= link_to "Endorse!", endorse_website_path, :method => :post
 
 	#website_submitter
 		= link_to "Website Submitter Profile", show_profile_path(@submitter.id), :id=>"submitter_profile_link"

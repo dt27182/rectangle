@@ -1,4 +1,5 @@
-#website_list
-	- @websites.each do |website|
-		= link_to "#{website.name}", show_website_path(website.id), :id => website.name
-
+%category_index
+	#statement
+		%h2 #{@category.name}
+%website_tiles
+	= render :partial => "/webtiles"
