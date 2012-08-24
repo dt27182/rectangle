@@ -2,15 +2,17 @@ To Do:
 1. prevent similar urls from being added(aka amazon.com vs www.amazon.com)
 2. Model level rspec tests
 3. Cucumber tests for index page and website submission
-5. Image upload
-6. Add another flash message type
-7. Rspec url tests
-8. Deal with banner resizing issues
-9. Think about picture upload validation
-10. Footer floats when no websites are displayed
-11. Website description has unnecessary whitespace stripping somewhere
+4. Add another flash message type
+5. Rspec url tests
+6. Deal with banner resizing issues
+7. Think about picture upload validation
+8. Footer floats when no websites are displayed
+9. Website description has unnecessary whitespace stripping somewhere
+10. User picture upload
+11. Grab User Name from facebook/google/twitter?
+12. Expose filter options in view
 
 Issues to discuss:
 1. black links are confusing
 2. picture size limit (1900x1200 => 0.5 MB jpeg)
-3. display just recent upvotes or all recent activities?
+
