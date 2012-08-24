@@ -30,7 +30,7 @@ Rectangle::Application.routes.draw do
   post '/website/:id/rate/:type' => 'websites#rate', :as => :rate_website
   
   #route to endorse website
-  post '/website/:id/endorse' => 'website#endorse', :as => :endorse_website
+  post '/website/:id/endorse' => 'websites#endorse', :as => :endorse_website
   #route to unendorse website
-  post '/website/:id/unendorse' => 'website#unendorse', :as => :unendorse_website
+  post '/website/:id/unendorse' => 'websites#unendorse', :as => :unendorse_website
 end

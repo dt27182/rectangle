@@ -18,11 +18,11 @@
 	#endorse_link
 		- if user_signed_in?
 			- if @is_endorsed
-				= link_to "Unendorse", unendorse_website_path(@website.id)
+				= link_to "Unendorse", unendorse_website_path(@website.id), :method => :post
 			- else
-				= link_to "Endorse!", endorse_website_path(@website.id)
+				= link_to "Endorse!", endorse_website_path(@website.id), :method => :post
 		- else
-			= link_to "Endorse!", new_user_session_path
+			= link_to "Endorse!", new_user_session_path, :method => :post
 
 
 
