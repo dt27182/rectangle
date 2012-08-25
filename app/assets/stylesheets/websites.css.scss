@@ -98,47 +98,64 @@
 	opacity:0.8; filter:alpha(opacity=30);
 }
 
+#website_information {
+	border-radius: 100px; /*adjusts the curve on border*/
+	border: solid 5px #CCCCCC;
+	background-color: white;
+	margin-top: 50px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 70px;
+}
 
-#website_name_address {
+#website_name_address a{
+	display:block;
 	font-size: 25pt; 
   font-family: Charcoal, Arial, sans-serif;
   font-weight:bold;
-  margin-left: 60px;
-  margin-top: 50px;
+  background: #EEEEEE;
+	border: 3px ridge #0077EE;
+	padding: 20px;
+  text-align: center;
+  width: 250px;
+}
+
+#website_name_address a:hover{
+	background-color: #DCE6F2;
+	opacity:0.8; filter:alpha(opacity=30);
 }
 
 #website_img_container {
 	position: relative;
 	float: right;
-	top: -50px;
-	right: 50px;
-	margin-left: 100px;
+	//right: 60px;
+	top: -85px;
+	margin-left: 120px;
 }
 
 #website_img {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background: #FFFFFF;
+  background: #EEEEEE;
 	height: auto;
-	padding: 40px 40px 40px 40px;
-	border-radius: 50px; /*adjusts the curve on border*/
-	border: solid 3px #CCCCCC;
+	padding: 40px;
+	//border-radius: 50px; /*adjusts the curve on border*/
+	border: 5px ridge #0077EE;
 	
 }
 
 #website_desc {
 	font-size: 16pt; 
   font-family: Helvetica, sans-serif;
-  margin-left: 60px;
   margin-top: 20px;
-
 }
 
 #website_submitter {
 	font-size: 14pt; 
   font-family: Helvetica, sans-serif;
-  margin-left: 60px;
+
   margin-top: 20px;
   font-weight:bold;
 }
@@ -147,7 +164,7 @@
 	position: relative;
 	font-size: 18pt; 
   font-family: Helvetica, sans-serif;
-  margin-left: 60px;
+
   margin-top: 20px;
   font-weight:bold;
   text-align: center;
@@ -155,7 +172,7 @@
 	display:block;
 	border: 3px ridge #0077EE;
 	padding: 10px;
-	background-color: #FFFFFF;
+	background-color: #DEDEDE;
 }
 
 #endorse_link a:hover{
