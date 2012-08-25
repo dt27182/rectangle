@@ -5,20 +5,14 @@ class UsersController < ApplicationController
 		@user.endorsements.each do |endorsement|
 			@websites << [Website.find_by_id(endorsement.website_id), Website.find_by_id(endorsement.website_id).get_rating("default").get_vote_differential]
 		end
-		@upvotes = []
-		@downvotes = []
-		@votedsites = []
+		@num_endorsements = @user.endorsements.count
+		@num_upvotes = 0
 		@votes = @user.votes.reverse[0..9]
-=begin
-		@votes.each do |vote|
-			@votedsites << Website.find_by_id(vote.website_id)
-			if vote.vote_type == 0
-				@downvotes << Website.find_by_id(vote.website_id)
-			elsif vote.vote_type == 1
-				@upvotes << Website.find_by_id(vote.website_id)
+		@users.votes.each do |vote|
+			if vote.vote_type == 1
+				@num_upvotes = @num_upvotes + 1
 			end
 		end
-=end
 	end
 	
 	def new

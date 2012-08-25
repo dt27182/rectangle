@@ -319,20 +319,20 @@ ul#Help {
 	clear: both;
 }
 
-//
-/* BE SURE TO INCLUDE THE CSS RESET FOUND IN THE DEMO PAGE'S CSS */
-/*------------------------------------*\
-	NAV
-\*------------------------------------*/
+
 #sort{
 	list-style:none;
 	font-weight:bold;
 	margin-bottom:10px;
 	/* Clear floats */
 	float:left;
-	width:65px;
+	width:250px;
 	position:relative;
 	z-index:5;
+	border: 3px ridge #0077EE;
+	padding: 0px;
+	margin-left: 50px;
+
 }
 #sort_child{
 	position:relative;
@@ -348,13 +348,11 @@ ul#Help {
 #sort a{
 	display:block;
 	padding:5px;
-	color:#fff;
-	background:#333;
+	background:#BAC4D1;
 	text-decoration:none;
 }
 #sort a:hover{
-	color:#fff;
-	background:#6b0c36;
+	background:#DD9966;
 	text-decoration:underline;
 }
 
@@ -364,11 +362,13 @@ ul#Help {
 	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
 	list-style:none;
 	position:absolute;
+	padding-top: 3px;
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 #sort ul li{
-	padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
-	margin-left: -40px;
+	border: 3px ridge #0077EE;
+	margin-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	margin-left: -43px;
 	float:none;
 }
 #sort ul a{
@@ -378,13 +378,13 @@ ul#Help {
 	left:0; /* Bring back on-screen when needed */
 }
 #sort li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-	background:#6b0c36;
+	background:##BAC4D1;
 	text-decoration:underline;
 }
 #sort li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
 	text-decoration:none;
 }
 #sort li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-	background:#333;
+	background:#DD9966;
 }
 

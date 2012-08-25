@@ -4,14 +4,14 @@
 			%li
 				= link_to "#{get_sort_type_display_name(@sort_type).titleize}", index_show_path(@sort_type)
 				%ul#sort_child
-					%li
-						- if @sort_type != "trending"
+					- if @sort_type != "trending"
+						%li
 							= link_to "What's Trending", index_show_path("trending")
-					%li
-						- if @sort_type != "quality"
+					- if @sort_type != "quality"
+						%li
 							= link_to "What's Best", index_show_path("quality")
-					%li
-						- if @sort_type != "newest"
+					- if @sort_type != "newest"
+						%li
 							= link_to "What's New", index_show_path("newest")
 		#end_float
 %website_tiles
