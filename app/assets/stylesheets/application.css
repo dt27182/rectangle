@@ -329,7 +329,7 @@ ul#Help {
 	font-weight:bold;
 	margin-bottom:10px;
 	/* Clear floats */
-	//float:left;
+	float:left;
 	width:65px;
 	position:relative;
 	z-index:5;
