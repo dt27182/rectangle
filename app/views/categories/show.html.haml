@@ -1,19 +1,21 @@
 %category_index
-	#statement
-		%h2 #{@category.name}
+
 	#sort_type
 		%ul#sort
 			%li
 				= link_to "#{@sort_type.titleize}", show_category_path(@category.name, @sort_type)
 				%ul#sort_child
-					%li
-						- if @sort_type != "trending"
+					- if @sort_type != "trending"
+						%li
 							= link_to "Trending", show_category_path(@category.name, "trending")
-					%li
-						- if @sort_type != "quality"
+
+					- if @sort_type != "quality"
+						%li
 							= link_to "Quality", show_category_path(@category.name, "quality")
-					%li
-						- if @sort_type != "newest"
+		
+					- if @sort_type != "newest"
+						%li
 							= link_to "Newest", show_category_path(@category.name, "newest")
 		#end_float
+		
 	= render :partial => "/webtiles"

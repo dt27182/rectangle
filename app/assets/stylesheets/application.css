@@ -319,20 +319,18 @@ ul#Help {
 	clear: both;
 }
 
-//
-/* BE SURE TO INCLUDE THE CSS RESET FOUND IN THE DEMO PAGE'S CSS */
-/*------------------------------------*\
-	NAV
-\*------------------------------------*/
+
 #sort{
 	list-style:none;
 	font-weight:bold;
 	margin-bottom:10px;
 	/* Clear floats */
-	//float:left;
-	width:65px;
+	float:left;
+	width:250px;
 	position:relative;
 	z-index:5;
+	border: 4px ridge #0077EE;
+
 }
 #sort_child{
 	position:relative;
@@ -367,6 +365,7 @@ ul#Help {
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 #sort ul li{
+	border: 4px ridge #0077EE;
 	padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
 	margin-left: -40px;
 	float:none;
@@ -378,7 +377,7 @@ ul#Help {
 	left:0; /* Bring back on-screen when needed */
 }
 #sort li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-	background:#6b0c36;
+	background:#555555;
 	text-decoration:underline;
 }
 #sort li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
