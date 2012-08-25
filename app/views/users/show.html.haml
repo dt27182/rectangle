@@ -4,15 +4,16 @@
 
 	#user_image
 		= image_tag(@user.picture.url, :size => '250x250')
+		
 	#user_picture_upload
 		- if user_signed_in? && current_user.picture_file_name.nil?
 			= form_tag add_profile_pic_path(), :multipart => true, :id => "add_profile_pic_form", :method => :post, do
-				#user_picture
+				#user_picture_browse
 					= label :user, :picture, 'Add your profile picture!'
 					%br
-					= file_field :user, :picture, :input_type => 'image', :class => "img_file_field"
-				#submit_button
-					= submit_tag 'Submit!', :class => "web_submit_button"
+					= file_field :user, :picture, :input_type => 'image', :class => "profile_img_file_field"
+				#profile_submit_img
+					= submit_tag 'Submit!', :class => "profile_submit_button"
 					
 	#user_votes
 		%ul#dropdown
