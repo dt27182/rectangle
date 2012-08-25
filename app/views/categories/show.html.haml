@@ -1,5 +1,15 @@
 %category_index
 	#statement
 		%h2 #{@category.name}
+	#sort_type
+		%ul
+			%li
+				%ul
+					%li
+						= link_to "trending", show_category_path(@category.name, "trending")
+					%li
+						= link_to "quality", show_category_path(@category.name, "quality")
+					%li
+						= link_to "newest", show_category_path(@category.name, "newest")
 %website_tiles
 	= render :partial => "/webtiles"

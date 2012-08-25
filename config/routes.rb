@@ -34,4 +34,6 @@ Rectangle::Application.routes.draw do
 	match '/profile/:user_id' => 'users#show', :as => :show_profile
 	#create new user redirect
 	match '/user/new' => 'users#new', :as => :new_user
+	#route to add profile picture
+	post '/user/add_profile_pic' => 'users#add_profile_pic', :as => :add_profile_pic
 end

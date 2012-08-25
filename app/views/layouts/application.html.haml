@@ -8,40 +8,19 @@
 		= csrf_meta_tags
 
 	%body
-		#banner
-			#logo_container
-				= link_to image_tag('rectangle_logo.png', :id=>'logo', :size=>'550x100'), '/'
-			%ul#links_bar
-				%li#disc
-					= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
-				%li#submit
-					= link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
-				%li#friend
-					= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
-				%li#profile
-					- if user_signed_in?
-						= link_to "Profile", show_profile_path(current_user.id), :class=>"link_bar_link"
-					- else
-						= link_to "Profile", new_user_path, :id=>"profile", :class=>"link_bar_link"
-			#user
-				- if user_signed_in?
-					= link_to "Logout", destroy_user_session_path, :method => :delete, :id=>"logout"
-				- else
-					= link_to "Log In / Register", new_user_session_path, :id=>"login"
-			
-			- if user_signed_in?
-				#user_name_front
-					= "Welcome, #{current_user.email}"
-					
+	
 		#wrapper
 		
-			- if flash[:notice]
-				#notice.message= flash[:notice]
-			- elsif flash[:warning]
-				#warning.message= flash[:warning]
+			#header
+				= render :partial => "/header"
 				
-			= yield
-			
-	%footer
-		=render :partial => "/footer"
+			#content
+				- if flash[:notice]
+					#notice.message= flash[:notice]
+				- elsif flash[:warning]
+					#warning.message= flash[:warning]
+				= yield	
+				
+			#footer
+				= render :partial => "/footer"
 

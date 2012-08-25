@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		@upvotes = []
 		@downvotes = []
 		@votedsites = []
-		@votes = @user.votes
+		@votes = @user.votes.reverse[0..9]
 =begin
 		@votes.each do |vote|
 			@votedsites << Website.find_by_id(vote.website_id)
@@ -23,6 +23,16 @@ class UsersController < ApplicationController
 	
 	def new
 		if user_signed_in?
+			redirect_to show_profile_path(current_user.id)
+		else
+			deny_access
+		end
+	end
+	
+	def add_profile_pic
+		if user_signed_in?
+			current_user.picture = params[:user][:picture]
+			current_user.save!
 			redirect_to show_profile_path(current_user.id)
 		else
 			deny_access

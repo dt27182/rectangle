@@ -7,8 +7,9 @@
 */
 
 html {
-	/*height: 100%;*/
-	/*background-image: url('background.jpg');*/
+	margin:0;
+	padding:0;
+	height:100%;
 	background-color: #DCE6F2;
 	background-repeat:no-repeat;
 	background-size: cover;
@@ -22,13 +23,55 @@ a:hover {color:#3300FF; text-decoration:none;}   /* mouse over link */
 a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 
 body {
-	margin: 0;
-	/*height: 100%;*/
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+#wrapper { 
+	min-height:100%;
+	position:relative;
+}
+
+#notice {
+  font-family:Arial, Helvetica, sans-serif; 
+  text-align: center;
+  font-size:20px;
+  border: 3px solid;
+  border-radius: 10px;
+  width: 40%;
+  padding: 5px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image:url('success.png');
+}
+
+#warning {
+  font-family:Arial, Helvetica, sans-serif; 
+  text-align: center;
+  font-size:20px;
+  border: 3px solid;
+  border-radius: 10px;
+  width: 40%;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('error.png');
 }
 	
-#banner {
+#header {
   background-color: #FFFFFF;
-  height: 113px;
+  height: 112px;
 }
 
 
@@ -136,6 +179,11 @@ ul#links_bar {
 	font-weight:bold;
 }
 
+#content {
+	padding:10px;
+	padding-bottom:210px; /* Height of the footer element */
+}
+
 #webtiles {
 	position: relative;
 }
@@ -221,51 +269,16 @@ ul#grid {
 #grid li a:hover img {
 	opacity:0.3; filter:alpha(opacity=30);
 }
+
 /*end webtile grid stuff*/
 
-#wrapper {  /*this includes the yield, basically this is the main body*/
-	/*height: 100%;*/
-}
-
-#notice {
-  font-family:Arial, Helvetica, sans-serif; 
-  text-align: center;
-  font-size:20px;
-  border: 3px solid;
-  border-radius: 10px;
-  width: 40%;
-  padding: 5px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  color: #4F8A10;
-  background-color: #DFF2BF;
-  background-image:url('success.png');
-}
-
-#warning {
-  font-family:Arial, Helvetica, sans-serif; 
-  text-align: center;
-  font-size:20px;
-  border: 3px solid;
-  border-radius: 10px;
-  width: 40%;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  color: #D8000C;
-  background-color: #FFBABA;
-  background-image: url('error.png');
-}
-
-footer {
-	position: relative;
-	clear:both;
+#footer {
+	width: 100%;
+	height: 150px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	clear: both;
   background-color: #FFFFFF;
   margin-top: 40px;
   padding-top: 5px;
@@ -277,16 +290,16 @@ footer {
 	color: #CC6611;
 }
 
-footer a:link {
+#footer a:link {
 	color: black;
 }
-footer a:visited {
+#footer a:visited {
 	color: black;
 }
-footer a:hover {
+#footer a:hover {
 	color: #3366FF;
 }
-footer a:active {
+#footer a:active {
 	color: #CC6611;
 }
 
@@ -302,4 +315,7 @@ ul#Help {
 	bottom: 10px;
 }
 
+#end_float {
+	clear: both;
+}
 
