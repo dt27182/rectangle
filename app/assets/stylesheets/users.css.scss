@@ -2,19 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*hover dropdown menus tutorial copy pasta from http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ */
+
+
+#user_profile_info {
+	position: relative;
+	text-align: center;	
+	width: 600px;
+	float:left
+}
 
 #user_email {
 	word-spacing: 5px;
-	font-size: 14pt; 
+	font-size: 18pt; 
   font-family: Helvetica, sans-serif;
-  margin-left: 60px;
-  margin-top: 30px;
+  //margin-left: 65px;
+  margin-top: 40px;
   font-weight:bold;
   margin-bottom: 20px;
 }
 
 #user_image {
+	position: relative;
 	text-align:center;
   background: #FFFFFF;
 	height: auto;
@@ -22,18 +30,29 @@
 	border-radius: 50px; /*adjusts the curve on border*/
 	border: solid 3px #CCCCCC;
 	width: 250px;
-	margin-left: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 50px;
 }
 
-#user_picture_browse{
-	margin-left: 25px;
+#user_picture_upload {
+	position: relative;
+	margin-top: 20px;
+	//left: 550px;
+	//top: 400px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#user_picture_browse {
+	//margin-left: 25px;
 	margin-bottom: 20px;
 }
 
 .profile_img_file_field {
 	background: #EEEEEE;
-	font-size: 15pt; 
+	font-size: 9pt; 
   font-family: Helvetica; 
   font-variant:small-caps;
 	border: 3px ridge #0077EE;
@@ -43,14 +62,13 @@
 	background: #EEEEEE;
 	box-shadow: 2px 2px 4px;
   width: 150px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-	font-size: 16pt; 
+  padding-top: 5px;
+  padding-bottom: 5px;
+	font-size: 14pt; 
   font-family: Helvetica; 
   font-variant:small-caps;
 	border: 3px ridge #0077EE;
   height: auto;	
-  margin-left: 140px;
 }
 
 .profile_submit_button:hover{
@@ -74,6 +92,8 @@
   font-weight:bold;
 }
 
+/*hover dropdown menus tutorial copy pasta from http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ */
+
 #user_votes {
 	//display:block;
 }
@@ -82,31 +102,31 @@
 	list-style:none;
 	font-weight:bold;
 	margin-bottom:20px;
-	margin-top: 20px;
+	margin-top: 100px;
 	/* Clear floats */
 	float:left;
-	left: 500px;
-	top: -550px;
+	//left: 500px;
+	//top: -350px;
 	//width:100%;
 	position:relative;
 	z-index:5;
 	
   font-family: Charcoal, Arial, sans-serif;
-  margin-left: 60px;
+  //margin-left: 60px;
 
   //font-weight:bold;
   //font-size: 16pt; 
   
   width: 115px;
-  
+  background-color: white;
 	display:block;
-	border: 3px ridge #0077EE;
+	border: 4px ridge #0077EE;
 	padding: 10px;
 }
 #dropdown li{
 	float:left;
 	//margin-right:10px;
-	padding:5px;
+	//padding:5px;
 	position:relative;
 }
 #dropdown a{
@@ -132,8 +152,9 @@
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 #dropdown ul li{
-	margin-left: -57px; /*controls where it appears with regards to original hover */
-	padding-top:2px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	border: 4px ridge #0077EE;
+	margin-left: -55px; /*controls where it appears with regards to original hover */
+	margin-top:5px; /* Introducing a padding between the li and the a give the illusion spaced items */
 	float:none;
 }
 #dropdown ul a{
@@ -144,7 +165,7 @@
 	left:0; /* Bring back on-screen when needed */
 }
 #dropdown li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-	background:#555555; /*background color of dropdown elements */
+	background:#555555; /* background color of dropdown elements */
 	padding-bottom: 6px;
 	text-decoration:underline;
 }
