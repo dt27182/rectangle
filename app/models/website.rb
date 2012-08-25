@@ -72,7 +72,7 @@ class Website < ActiveRecord::Base
   		end
   	end
   	rating.trending_score = Math.log10([score.abs, 1].max) + sign * time_weight / 45000
-  	rating.quality_score = rating.num_upvote.to_f/(rating.num_upvote + rating.num_downvote)
+  	rating.quality_score = rating.num_upvote.to_f/(1 + rating.num_downvote)
   	rating.save!
   end
   
@@ -93,7 +93,7 @@ class Website < ActiveRecord::Base
   		end
   	end
   	rating.trending_score = Math.log10([score.abs, 1].max) + sign * time_weight / 45000
-  	rating.quality_score = rating.num_upvote.to_f/(rating.num_upvote + rating.num_downvote)
+  	rating.quality_score = rating.num_upvote.to_f/(1 + rating.num_downvote)
   	rating.save!
   end
   
