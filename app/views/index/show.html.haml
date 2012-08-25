@@ -1,15 +1,18 @@
 %index
 	#sort_type
-		%ul#nav
+		%ul#sort
 			%li
-				= link_to "#{@sort_type}", index_show_path(@sort_type)
-				%ul
+				= link_to "#{@sort_type.titleize}", index_show_path(@sort_type)
+				%ul#sort_child
 					%li
-						= link_to "trending", index_show_path("trending")
+						- if @sort_type != "trending"
+							= link_to "Trending", index_show_path("trending")
 					%li
-						= link_to "quality", index_show_path("quality")
+						- if @sort_type != "quality"
+							= link_to "Quality", index_show_path("quality")
 					%li
-						= link_to "newest", index_show_path("newest")
+						- if @sort_type != "newest"
+							= link_to "Newest", index_show_path("newest")
 		#end_float
 %website_tiles
 	= render :partial => "/webtiles"
