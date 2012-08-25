@@ -71,7 +71,7 @@ body {
 	
 #header {
   background-color: #FFFFFF;
-  height: 113px;
+  height: 112px;
 }
 
 
@@ -181,7 +181,7 @@ ul#links_bar {
 
 #content {
 	padding:10px;
-	padding-bottom:150px; /* Height of the footer element */
+	padding-bottom:210px; /* Height of the footer element */
 }
 
 #webtiles {
