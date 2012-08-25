@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   								:provider, :uid, :picture
   								
 	has_attached_file :picture, :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml", :path => "/profile_pic/:style/:id/:filename"
-  validates_attachment_presence :picture
 	validates_attachment_size :picture, :less_than => (0.6).megabytes
 	validates_attachment_content_type :picture, :content_type => ['image/jpg','image/jpeg', 'image/png', 'image/tiff', 'image/gif', 'image/pjepg', 'image/x-png']
 	

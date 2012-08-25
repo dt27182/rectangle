@@ -5,7 +5,7 @@
 	#user_image
 		= image_tag(@user.picture.url, :size => '250x250')
 	#user_picture_upload
-		- if user_signed_in? && current_user.picture_file_name.nil?
+		- if user_signed_in? && current_user.picture_file_name.nil? && current_user.id == @user.id
 			= form_tag add_profile_pic_path(), :multipart => true, :id => "add_profile_pic_form", :method => :post, do
 				#user_picture
 					= label :user, :picture, 'Add your profile picture!'
