@@ -205,7 +205,7 @@ ul#links_bar {
 	color: #5266ff;
 }
 
-.website_tile a img { 
+.website_img img { 
    border:1px solid #909091;
    box-shadow: 2px 2px 4px 1px #ccc;
 }
@@ -230,7 +230,7 @@ ul#links_bar {
 }
 
 .upvote_not_signed_in {
-	margin-bottom: 10px;
+	margin-bottom: 12px;
 }
 
 .upvote_not_signed_in:hover {
