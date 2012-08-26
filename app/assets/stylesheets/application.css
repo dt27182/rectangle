@@ -24,7 +24,6 @@ a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 body {
 	margin: 0;
 	height: 100%; /* make this 100% if you see stuff below the footer (background leaking through for whatever reason */
-  padding-top: 120px;
 }
 	
 #banner {
