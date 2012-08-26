@@ -17,8 +17,8 @@ html {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-a:link {color:#3366FF; text-decoration:none;}    /* unvisited link */
-a:visited {color:#3366FF; text-decoration:none;} /* visited link */
+a:link {color:#000000; text-decoration:none;}    /* unvisited link */
+a:visited {color:#000000; text-decoration:none;} /* visited link */
 a:hover {color:#3300FF; text-decoration:none;}   /* mouse over link */
 a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 
@@ -97,8 +97,8 @@ body {
 	font-variant:small-caps;
 	font-weight:bold;
   width: 200px;
-  background-color:#DCE6F2;
-  border: groove 5px #CBD5E1;
+  background-color:#FFFFF;
+  border: solid 1px #909091;
 }
 
 #user a {
@@ -108,7 +108,7 @@ body {
 }
 
 #user a:hover {
-	background-color: #CBD5E1;
+	background-color: #DCE6F2;;
 }
 
 #user a:active {
@@ -125,8 +125,8 @@ body {
 	font-variant:small-caps;
 	font-weight:bold;
   width: 420px;
-  background-color:#DCE6F2;
-  border: groove 5px #CBD5E1;
+  background-color:#FFFFFF;
+  border: solid 1px #909091;
   padding-top: 10px;
   padding-bottom: 10px;
   word-spacing: 3px;
@@ -134,10 +134,10 @@ body {
 
 ul#links_bar {
   position: absolute;
-  top: 48px;
-  right: 25px;
+  top: 50px;
+  right: 0px;
   text-align: center;
-  width: 880px;
+  width: 802px;
   word-spacing: 50px;
   list-style-type:none;
 	overflow:hidden;
@@ -150,21 +150,19 @@ ul#links_bar {
 #links_bar li a {
 	display:block;
 	width:200px;
-	background-color:#DCE6F2;
-	margin-right: 10px;
+	background-color:#FFFFFF;
+	margin-right: -2px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-top-style:groove;
-	border-right-style:groove;
-	border-left-style:groove;
-	border-color: #CBD5E1;
-	border-width: 5px;
+	border-style: solid;
+	border-color: #909091;
+	border-width: 1px;
 }
 
 #links_bar li a:hover {
-	background-color: #CBD5E1;
+	background-color: #DCE6F2;;
 }
 
 #links_bar li a:active {
@@ -199,6 +197,18 @@ ul#links_bar {
 	border: solid 3px #CCCCCC;
 }
 
+.website_tile a:link {
+	color: #5266ff;
+}
+
+.website_tile a:visited {
+	color: #5266ff;
+}
+
+.website_tile a img { 
+   border:1px solid #909091;
+   box-shadow: 2px 2px 4px 1px #ccc;
+}
 #vote {
 	float: left;
 	padding-bottom: 0;
@@ -208,7 +218,7 @@ ul#links_bar {
 }
 
 .upvote {
-	margin-bottom: 10px;
+	margin-bottom: 12px;
 }
 
 .upvote:hover {
@@ -284,9 +294,9 @@ ul#grid {
   padding-top: 5px;
   padding-bottom: 10px;
   font-size: 15pt;
-  border-top-style:ridge;
-	border-color: #006699;
-	border-width: 15px;
+  border-top-style: solid;
+	border-color: #909091;
+	border-width: 1px;
 	color: #CC6611;
 }
 
@@ -304,15 +314,13 @@ ul#grid {
 }
 
 ul#Legal {
-	position: relative;
+	float: left;
 	list-style: none;
+	margin-right: 20px;
 }
 
 ul#Help {
-	position: absolute;
 	list-style: none;
-	left: 200px;
-	bottom: 10px;
 }
 
 #end_float {
@@ -329,7 +337,7 @@ ul#Help {
 	width:250px;
 	position:relative;
 	z-index:5;
-	border: 3px ridge #0077EE;
+	border: 2px solid #5e8ec5;
 	padding: 0px;
 	margin-left: 50px;
 
@@ -348,7 +356,7 @@ ul#Help {
 #sort a{
 	display:block;
 	padding:5px;
-	background:#BAC4D1;
+	background:#f7f270;
 	text-decoration:none;
 }
 #sort a:hover{
@@ -362,13 +370,13 @@ ul#Help {
 	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
 	list-style:none;
 	position:absolute;
-	padding-top: 3px;
+	padding-top: 0px;
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 #sort ul li{
-	border: 3px ridge #0077EE;
-	margin-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
-	margin-left: -43px;
+	border: 2px solid #5e8ec5;
+	margin-top:-2px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	margin-left: -42px;
 	float:none;
 }
 #sort ul a{
@@ -379,7 +387,7 @@ ul#Help {
 }
 #sort li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
 	background:##BAC4D1;
-	text-decoration:underline;
+	text-decoration:none;
 }
 #sort li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
 	text-decoration:none;

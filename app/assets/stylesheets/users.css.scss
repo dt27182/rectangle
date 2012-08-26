@@ -26,7 +26,7 @@
 	text-align:center;
   background: #FFFFFF;
 	height: auto;
-	padding: 40px 40px 40px 40px;
+	padding: 20px 20px 20px 20px;
 	border-radius: 50px; /*adjusts the curve on border*/
 	border: solid 3px #CCCCCC;
 	width: 250px;
@@ -55,19 +55,17 @@
 	font-size: 9pt; 
   font-family: Helvetica; 
   font-variant:small-caps;
-	border: 3px ridge #0077EE;
+	border: 2px solid #5e8ec5;
 }
 
 .profile_submit_button {
 	background: #EEEEEE;
 	box-shadow: 2px 2px 4px;
-  width: 150px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 100px;
 	font-size: 14pt; 
   font-family: Helvetica; 
   font-variant:small-caps;
-	border: 3px ridge #0077EE;
+	border: 2px solid #5e8ec5;
   height: auto;	
 }
 
@@ -91,17 +89,36 @@
   font-weight:bold;
 }
 
-/*hover dropdown menus tutorial copy pasta from http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ */
-
-#user_votes {
-	//display:block;
+#follow {
+	float:left;
+	margin-top: 100px;
+	margin-left: -80px;
+	margin-right: 50px;
 }
+
+#user_stats {
+	margin-top: 100px;
+	float: left;
+}
+
+#user_num_endorsements {
+	font-weight:bold;
+	//margin-bottom:20px;
+	//margin-top: 100px;
+	position:relative;
+  font-family: Charcoal, Arial, sans-serif; 
+  background: white;
+	border: 2px solid #5e8ec5;
+	padding: 10px 50px 10px 50px;
+}
+
+/*hover dropdown menus tutorial copy pasta from http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/ */
 
 #dropdown {
 	list-style:none;
 	font-weight:bold;
 	margin-bottom:20px;
-	margin-top: 100px;
+	//margin-top: 100px;
 	/* Clear floats */
 	float:left;
 	//left: 500px;
@@ -119,7 +136,7 @@
   //width: 200px;
   background: white; /*color of main dropdown */
 	//display:block;
-	border: 4px ridge #0077EE;
+	border: 2px solid #5e8ec5;
 	//padding: 10px;
 	padding-left: 0px;
 }
@@ -157,12 +174,12 @@
 	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
 	list-style:none;
 	position:absolute;
-	padding-top: 22px;
+	padding-top: 18px;
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 #dropdown ul li{
-	border: 4px ridge #0077EE;
-	margin-left: -44px; /*controls where it appears with regards to original hover */
+	border: 2px solid #5e8ec5;
+	margin-left: -42px; /*controls where it appears with regards to original hover */
 	margin-top:5px; /* Introducing a padding between the li and the a give the illusion spaced items */
 	float:none;
 	padding: 0px;
