@@ -1,40 +1,41 @@
 %html
 
-	%head
-	
-		%title Rectangle
-		= stylesheet_link_tag 'application'
-		= javascript_include_tag 'application'
-		= csrf_meta_tags
+  %head
+  
+    %title Rectangle
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'bootstrap-responsive'
+    = csrf_meta_tags
 
-	%body
-		#banner
-			#logo_container
-				= link_to image_tag('logo.png', :id=>'logo', :size=>'400x100'), '/'
-			%ul#links_bar
-				%li#disc
-					= link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
-				%li#submit
-					= link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
-				%li#friend
-					= link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
-				%li#profile
-					= link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
-			#user
-				- if @logged_in
-					= link_to "Logout", '/logout', :id=>"logout"
-				- else
-					= link_to "Log In / Register", '/login', :id=>"login"
-			
-		#wrapper
-		
-			- if flash[:notice]
-				#notice.message= flash[:notice]
-			- elsif flash[:warning]
-				#warning.message= flash[:warning]
-				
-			= yield
-			
-	%footer
-		=render :partial => "/footer"
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top#banner 
+      #logo_container
+        = link_to image_tag('logo.png', :id=>'logo', :size=>'400x100'), '/'
+      %ul#links_bar
+        %li#disc
+          = link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
+        %li#submit
+          = link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
+        %li#friend
+          = link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
+        %li#profile
+          = link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
+      #user
+        - if @logged_in
+          = link_to "Logout", '/logout', :id=>"logout"
+        - else
+          = link_to "Log In / Register", '/login', :id=>"login"
+      
+    #wrapper
+    
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+        
+      = yield
+      
+  %footer
+    =render :partial => "/footer"
 
