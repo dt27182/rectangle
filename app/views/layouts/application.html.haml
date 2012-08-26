@@ -10,7 +10,7 @@
 
   %body
     .navbar.navbar-inverse.navbar-fixed-top#banner 
-      #logo_container
+      .container#logo_container
         = link_to image_tag('logo.png', :id=>'logo', :size=>'400x100'), '/'
       %ul#links_bar
         %li#disc
@@ -27,8 +27,7 @@
         - else
           = link_to "Log In / Register", '/login', :id=>"login"
       
-    #wrapper
-    
+    .container#wrapper
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
