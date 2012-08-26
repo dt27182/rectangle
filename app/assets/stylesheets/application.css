@@ -205,7 +205,7 @@ ul#links_bar {
 	color: #5266ff;
 }
 
-.website_img img { 
+.shadow img { 
    border:1px solid #909091;
    box-shadow: 2px 2px 4px 1px #ccc;
 }

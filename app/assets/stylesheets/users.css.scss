@@ -15,9 +15,9 @@
 	word-spacing: 5px;
 	font-size: 18pt; 
   font-family: Helvetica, sans-serif;
-  //margin-left: 65px;
-  margin-top: 40px;
   font-weight:bold;
+  margin-left: 75px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -27,8 +27,8 @@
   background: #FFFFFF;
 	height: auto;
 	padding: 25px 25px 25px 25px;
-	border-radius: 50px; /*adjusts the curve on border*/
-	border: solid 3px #CCCCCC;
+	border-radius: 20px; /*adjusts the curve on border*/
+	border: solid 3px #5e8ec5;
 	width: 250px;
 	margin-left: auto;
 	margin-right: auto;
@@ -87,13 +87,6 @@
 	font-size: 16pt; 
   font-family: Helvetica, sans-serif;
   font-weight:bold;
-}
-
-#follow {
-	float:left;
-	margin-top: 100px;
-	margin-left: -80px;
-	margin-right: 50px;
 }
 
 #user_stats {
