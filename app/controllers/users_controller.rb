@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		@num_endorsements = @user.endorsements.count
 		@num_upvotes = 0
 		@votes = @user.votes.reverse[0..9]
-		@users.votes.each do |vote|
+		@user.votes.each do |vote|
 			if vote.vote_type == 1
 				@num_upvotes = @num_upvotes + 1
 			end
