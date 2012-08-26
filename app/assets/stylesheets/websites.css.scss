@@ -75,6 +75,26 @@
 	text-align: center;
 }
 
+#submission_errors {
+  font-family:Arial, Helvetica, sans-serif; 
+  //text-align: center;
+  font-size:20px;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+#submission_errors h2 {
+	display: none;
+}
 .web_submit_button {
 	background: #EEEEEE;
 	box-shadow: 2px 2px 4px;
