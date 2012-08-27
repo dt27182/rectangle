@@ -1,0 +1,25 @@
+#webtiles
+	%ul#grid
+		- @websites.each do |website|
+			%li
+				.website_tile
+					= link_to image_tag("#{website[0].picture.url}", :size => '250x250'), show_website_path(website[0].id), :id => "#{website[0].name} image", :class => :shadow
+					#vote
+						- if user_signed_in?
+							%div{:class => "upvote", :website_id => "#{website[0].id}"}
+								= image_tag('arrow-up.png', :size => '30x30')
+							%div{:class => "score"}
+								= website[1]
+							%div{:class => "downvote", :website_id => "#{website[0].id}"}
+								= image_tag('arrow-down.png', :size => '30x30')
+						- else
+							%div{:class => "upvote_not_signed_in", :website_id => "#{website[0].id}"}
+								= link_to image_tag('arrow-up.png', :size => '30x30'), new_user_session_path
+							%div{:class => "score"}
+								= website[1]
+							%div{:class => "downvote_not_signed_in", :website_id => "#{website[0].id}"}
+								= link_to image_tag('arrow-down.png', :size => '30x30'), new_user_session_path
+					#tile_info
+						= link_to "#{website[0].name}", website[0].url, :id => website[0].name
+						= "(#{Category.find_by_id(Subcategory.find_by_id(website[0].subcategory_id).category_id).name})"
+		#end_float

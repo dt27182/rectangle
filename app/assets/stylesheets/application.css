@@ -7,8 +7,9 @@
 */
 
 html {
-	height: 100%;
-	/*background-image: url('background.jpg');*/
+	margin:0;
+	padding:0;
+	height:100%;
 	background-color: #DCE6F2;
 	background-repeat:no-repeat;
 	background-size: cover;
@@ -16,190 +17,20 @@ html {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-a:link {color:#3366FF; text-decoration:none;}    /* unvisited link */
-a:visited {color:#3366FF; text-decoration:none;} /* visited link */
+a:link {color:#000000; text-decoration:none;}    /* unvisited link */
+a:visited {color:#000000; text-decoration:none;} /* visited link */
 a:hover {color:#3300FF; text-decoration:none;}   /* mouse over link */
 a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 
 body {
-	margin: 0;
-	height: 100%; /* make this 100% if you see stuff below the footer (background leaking through for whatever reason */
-}
-	
-#banner {
-  background-color: #FFFFFF;
-  height: 112px;
+	margin:0;
+	padding:0;
+	height:100%;
 }
 
-
-#logo_container {
-	position: relative;
-	padding-top: 12px;
-	margin-left: 20px;
-	z-index: 0;
-}
-
-#logo {
-}
-
-#user {
-  position: absolute;
-  float: right;
-  top: 10px;
-  right: 35px;
-  text-align: center;
-  font-family: Charcoal, Arial, sans-serif; 
-	font-variant:small-caps;
-	font-weight:bold;
-  width: 200px;
-  background-color:#EDF7F3;
-  border: groove 5px #CBD5E1;
-}
-
-#user a {
-	display: block;
-	padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#user a:hover {
-	background-color: #CBD5E1;
-}
-
-#user a:active {
-	background-color: #FEF8F4;
-}
-
-ul#links_bar {
-  position: absolute;
-  top: 48px;
-  right: 25px;
-  text-align: center;
-  //margin-top: 30px;
-  //margin-bottom: 30px;
-  //padding-top: 10px;
-  //padding-bottom: 10px;
-  width: 880px;
-  //background: #FFFFFF;
-  //border-radius: 5px;
-  //border: solid 5px #DCE6F2;
-  word-spacing: 50px;
-  list-style-type:none;
-	overflow:hidden;
-}
-
-#links_bar li {
-	float:left;
-}
-
-#links_bar li a {
-	display:block;
-	width:200px;
-	background-color:#EDF7F3;
-	margin-right: 10px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-top-style:groove;
-	border-right-style:groove;
-	border-left-style:groove;
-	border-color: #CBD5E1;
-	border-width: 5px;
-}
-
-#links_bar li a:hover {
-	background-color: #CBD5E1;
-}
-
-#links_bar li a:active {
-	background-color: #FEF8F4;
-}
-
-.link_bar_link {
-  //text-transform:uppercase;
-  word-spacing: 3px;
-  font-family: Charcoal, Arial, sans-serif; 
-	font-variant:small-caps;
-	font-weight:bold;
-}
-
-#webtiles {
-	position: relative;
-}
-
-.website_tile { /* the tile class*/
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background: #FFFFFF;
-	height: auto;
-	padding: 30px 25px 85px 25px;
-	border-radius: 50px; /*adjusts the curve on border*/
-	border: solid 3px #CCCCCC;
-}
-
-#vote {
-	float: left;
-	padding-bottom: 0;
-	margin: 0 20px 0 10px;
-	margin-top: 5px;
-	text-align: center;
-}
-
-.upvote {
-	margin-bottom: 10px;
-}
-
-.upvote:hover {
-	opacity:0.3; filter:alpha(opacity=30);
-}
-
-.downvote {
-}
-
-.downvote:hover {
-	opacity:0.3; filter:alpha(opacity=30);
-}
-.score {
-	margin-top: -12px;
-	margin-bottom: -4px;
-	color: #CC6611
-}
-#tile_info {
-	position: absolute;
-	margin-left: 60px;
-	margin-top: 20px;
-}
-
-ul#grid {
-	position: relative;
-	padding: 0;
-	list-style: none;
-	margin: 20px auto 0;
-	width: 90%;  
-}
-
-#grid li {
-	float: left;
-	padding: 0;
-	margin: 0 40px 100px 40px;
-} 
-
-#grid li a {
-	display: block;
-}
-
-#grid li img {
-	background-color: white;
-}
-  
-#grid li a:hover img {
-	opacity:0.3; filter:alpha(opacity=30);
-}
-
-#wrapper {  /*this includes the yield, basically this is the main body*/
-	height: 100%;
+#wrapper { 
+	min-height:100%;
+	position:relative;
 }
 
 #notice {
@@ -237,35 +68,330 @@ ul#grid {
   background-color: #FFBABA;
   background-image: url('error.png');
 }
+	
+#header {
+  background-color: #FFFFFF;
+  height: 112px;
+}
 
-footer {
+
+#logo_container {
 	position: relative;
-	clear:both;
+	padding-top: 7px;
+	padding-bottom: 10px;
+	margin-left: 20px;
+	z-index: 0;
+}
+
+#logo {
+}
+
+#user {
+  position: absolute;
+  float: right;
+  top: 10px;
+  right: 35px;
+  text-align: center;
+  font-family: Charcoal, Arial, sans-serif; 
+	font-variant:small-caps;
+	font-weight:bold;
+  width: 200px;
+  background-color:#FFFFF;
+  border: solid 1px #909091;
+}
+
+#user a {
+	display: block;
+	padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#user a:hover {
+	background-color: #DCE6F2;;
+}
+
+#user a:active {
+	background-color: #FEF8F4;
+}
+
+#user_name_front {
+  position: absolute;
+  float: right;
+  top: 10px;
+  right: 255px;
+  text-align: center;
+  font-family: Charcoal, Arial, sans-serif; 
+	font-variant:small-caps;
+	font-weight:bold;
+  width: 420px;
+  background-color:#FFFFFF;
+  border: solid 1px #909091;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  word-spacing: 3px;
+}
+
+ul#links_bar {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  text-align: center;
+  width: 802px;
+  word-spacing: 50px;
+  list-style-type:none;
+	overflow:hidden;
+}
+
+#links_bar li {
+	float:left;
+}
+
+#links_bar li a {
+	display:block;
+	width:200px;
+	background-color:#FFFFFF;
+	margin-right: -2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-style: solid;
+	border-color: #909091;
+	border-width: 1px;
+}
+
+#links_bar li a:hover {
+	background-color: #DCE6F2;;
+}
+
+#links_bar li a:active {
+	background-color: #FEF8F4;
+}
+
+.link_bar_link {
+  //text-transform:uppercase;
+  word-spacing: 3px;
+  font-family: Charcoal, Arial, sans-serif; 
+	font-variant:small-caps;
+	font-weight:bold;
+}
+
+#content {
+	padding:10px;
+	padding-bottom:210px; /* Height of the footer element */
+}
+
+#webtiles {
+	position: relative;
+}
+
+.website_tile { /* the tile class*/
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+	height: auto;
+	padding: 30px 25px 85px 25px;
+	border-radius: 50px; /*adjusts the curve on border*/
+	border: solid 3px #CCCCCC;
+}
+
+.website_tile a:link {
+	color: #5266ff;
+}
+
+.website_tile a:visited {
+	color: #5266ff;
+}
+
+.shadow img { 
+   border:1px solid #909091;
+   box-shadow: 2px 2px 4px 1px #ccc;
+}
+#vote {
+	float: left;
+	padding-bottom: 0;
+	margin: 0 20px 0 10px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+.upvote {
+	margin-bottom: 12px;
+}
+
+.upvote:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+.downvote:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+.upvote_not_signed_in {
+	margin-bottom: 12px;
+}
+
+.upvote_not_signed_in:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+.downvote_not_signed_in:hover {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+.score {
+	margin-top: -12px;
+	margin-bottom: -4px;
+	color: #CC6611
+}
+
+#tile_info {
+	position: absolute;
+	margin-left: 60px;
+	margin-top: 20px;
+}
+
+/*webtile grid stuff below*/
+ul#grid {
+	position: relative;
+	padding: 0;
+	list-style: none;
+	margin: 20px auto 0;
+	width: 90%;  
+}
+
+#grid li {
+	float: left;
+	padding: 0;
+	margin: 0 40px 100px 40px;
+} 
+
+#grid li a {
+	display: block;
+}
+
+#grid li img {
+	background-color: white;
+}
+  
+#grid li a:hover img {
+	opacity:0.3; filter:alpha(opacity=30);
+}
+
+/*end webtile grid stuff*/
+
+#footer {
+	width: 100%;
+	height: 150px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	clear: both;
   background-color: #FFFFFF;
   margin-top: 40px;
   padding-top: 5px;
   padding-bottom: 10px;
   font-size: 15pt;
-  border-top-style:ridge;
-	border-color: #006699;
-	border-width: 15px;
+  border-top-style: solid;
+	border-color: #909091;
+	border-width: 1px;
 	color: #CC6611;
 }
 
-footer a:link {
-	color:black;
+#footer a:link {
+	color: black;
+}
+#footer a:visited {
+	color: black;
+}
+#footer a:hover {
+	color: #3366FF;
+}
+#footer a:active {
+	color: #CC6611;
 }
 
 ul#Legal {
-	position: relative;
+	float: left;
 	list-style: none;
+	margin-right: 20px;
 }
 
 ul#Help {
-	position: absolute;
 	list-style: none;
-	left: 200px;
-	bottom: 10px;
 }
 
+#end_float {
+	clear: both;
+}
+
+
+#sort{
+	list-style:none;
+	font-weight:bold;
+	margin-bottom:10px;
+	/* Clear floats */
+	float:left;
+	width:250px;
+	position:relative;
+	z-index:5;
+	border: 2px solid #5e8ec5;
+	padding: 0px;
+	margin-left: 50px;
+
+}
+#sort_child{
+	position:relative;
+	z-index:5;
+}
+#sort li{
+	float:left;
+	margin-right:10px;
+	position:relative;
+	list-style:none;
+	width:250px;
+}
+#sort a{
+	display:block;
+	padding:5px;
+	background:#f7f270;
+	text-decoration:none;
+}
+#sort a:hover{
+	background:#DD9966;
+	text-decoration:underline;
+}
+
+/*--- DROPDOWN ---*/
+#sort ul{
+	background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+	list-style:none;
+	position:absolute;
+	padding-top: 0px;
+	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+#sort ul li{
+	border: 2px solid #5e8ec5;
+	margin-top:-2px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	margin-left: -42px;
+	float:none;
+}
+#sort ul a{
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+#sort li:hover ul{ /* Display the dropdown on hover */
+	left:0; /* Bring back on-screen when needed */
+}
+#sort li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	background:##BAC4D1;
+	text-decoration:none;
+}
+#sort li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	text-decoration:none;
+}
+#sort li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	background:#DD9966;
+}
 

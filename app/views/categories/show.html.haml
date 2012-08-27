@@ -1,4 +1,21 @@
-#website_list
-	- @websites.each do |website|
-		= link_to "#{website.name}", show_website_path(website.id), :id => website.name
+%category_index
 
+	#sort_type
+		%ul#sort
+			%li
+				= link_to "#{get_sort_type_display_name(@sort_type).titleize} in " + @category.name.capitalize, show_category_path(@category.name, @sort_type)
+				%ul#sort_child		
+					- if @sort_type != "trending"
+						%li
+							= link_to "What's Trending in " + @category.name.capitalize, show_category_path(@category.name, "trending")
+
+					- if @sort_type != "quality"
+						%li
+							= link_to "What's Best in "+ @category.name.capitalize, show_category_path(@category.name, "quality")
+
+					- if @sort_type != "newest"
+						%li
+							= link_to "What's New in "+ @category.name.capitalize, show_category_path(@category.name, "newest")
+		#end_float
+		
+	= render :partial => "/webtiles"
