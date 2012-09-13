@@ -5,6 +5,9 @@
  *= require_self
  *= require_tree . 
 */
+.float-container {
+  z-index: 1030;
+}
 
 html {
 	margin:0;
@@ -24,8 +27,12 @@ a:active {color:#3399FF; text-decoration:none;}  /* selected link */
 
 body {
 	margin:0;
-	padding:0;
+  padding-top:60px;
 	height:100%;
+}
+
+.clearfix {
+  clear:both;
 }
 
 #wrapper { 

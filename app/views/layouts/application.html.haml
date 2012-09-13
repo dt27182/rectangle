@@ -1,39 +1,88 @@
-%html
-
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
   %head
-  
-    %title Rectangle
-    = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
-    = javascript_include_tag 'bootstrap-responsive'
-    = csrf_meta_tags
-
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+        %title Rectangle
+        %meta{:content => "", :name => "description"}
+          %meta{:content => "width=device-width", :name => "viewport"}
+        = stylesheet_link_tag 'application'
+        = javascript_include_tag 'jquery'
+        = stylesheet_link_tag 'bootstrap'
+        = stylesheet_link_tag 'bootstrap-responsive'
+        = javascript_include_tag 'modernizr-2.6.1-respond-1.1.0.min'
+        = javascript_include_tag 'bootstrap.min'
   %body
-    #banner 
-      #logo_container
-        = link_to image_tag('rectangle_logo.png', :id=>'logo', :size=>'400x100'), '/'
-      %ul#links_bar
-        %li#disc
-          = link_to "Discover", '/', :id=>"discover", :class=>"link_bar_link"
-        %li#submit
-          = link_to "Submit A Site", display_new_website_path, :id=>"submit", :class=>"link_bar_link"
-        %li#friend
-          = link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
-        %li#profile
-          = link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
-      #user
-        - if @logged_in
-          = link_to "Logout", '/logout', :id=>"logout"
-        - else
-          = link_to "Log In / Register", '/login', :id=>"login"
-      
-    .container#wrapper
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-        
+    /[if lt IE 7]
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    / This code is taken from http://twitter.github.com/bootstrap/examples/hero.html
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          -#%a.brand{:href => "#"} Project name
+          = link_to image_tag('rectangle_logo.png', :size=>'60x15', :class=>"brand"), '/'
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                = link_to "Home", '/'
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "/"}
+                  Discover
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    = link_to "What's Trending", "/show/trending"
+                  %li
+                    = link_to "What's Best", "/show/quality"
+                  %li
+                    = link_to "What's New", "/show/newest"
+              %li
+                = link_to "Submit A Site", display_new_website_path
+              %li
+                = link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
+              %li
+                = link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
+            %ul.nav.pull-right
+              %li
+                - if @logged_in
+                  = link_to "Logout", '/logout', :id=>"logout"
+                - else
+                  = link_to "Log In / Register", '/login', :id=>"login"
+          / /.nav-collapse
+    .container.yield-container
+      / Main hero unit for a primary marketing message or call to action
+      - if flash[:error] or flash[:notice] or flash[:warning]
+        .hero-unit
+          .container#wrapper
+            - if flash[:error]
+              #warning.message= flash[:error]
+            - if flash[:notice]
+              #notice.message= flash[:notice]
+            - if flash[:warning]
+              #warning.message= flash[:warning]
       = yield
+      %hr
+        %footer
+          =render :partial => "/footer"
+    / /container
+    :javascript
+      window.jQuery || document.write('<\/script>')
       
-  %footer
-    =render :partial => "/footer"
+              
+      
+              
+      
+              
+                  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                  s.parentNode.insertBefore(g,s)}(document,'script'));
