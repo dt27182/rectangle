@@ -29,13 +29,13 @@
             %span.icon-bar
             %span.icon-bar
           -#%a.brand{:href => "#"} Project name
-          = link_to image_tag('rectangle_logo.png', :size=>'60x15', :class=>"brand"), '/'
+          = link_to image_tag('rectangle_logo.png', :size=>'60x15', :class=>"brand"), root_path
           .nav-collapse.collapse
             %ul.nav
               %li.active
-                = link_to "Home", '/'
+                = link_to "Home", root_path
               %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "/"}
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => root_path}
                   Discover
                   %b.caret
                 %ul.dropdown-menu
@@ -48,15 +48,15 @@
               %li
                 = link_to "Submit A Site", display_new_website_path
               %li
-                = link_to "Friends", '/', :id=>"friends", :class=>"link_bar_link"
+                = link_to "Friends", root_path, :id=>"friends", :class=>"link_bar_link"
               %li
-                = link_to "Profile", '/', :id=>"profile", :class=>"link_bar_link"
+                = link_to "Profile", show_profile_path(current_user.id), :class=>"link_bar_link"
             %ul.nav.pull-right
               %li
-                - if @logged_in
-                  = link_to "Logout", '/logout', :id=>"logout"
+                - if user_signed_in?
+                  = link_to "Logout", destroy_user_session_path, :id=>"logout"
                 - else
-                  = link_to "Log In / Register", '/login', :id=>"login"
+                  = link_to "Log In / Register", new_user_session_path, :id=>"login"
           / /.nav-collapse
     .container.yield-container
       / Main hero unit for a primary marketing message or call to action
@@ -76,13 +76,7 @@
     / /container
     :javascript
       window.jQuery || document.write('<\/script>')
-      
-              
-      
-              
-      
-              
-                  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-                  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-                  s.parentNode.insertBefore(g,s)}(document,'script'));
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
