@@ -33,24 +33,28 @@
           .nav-collapse.collapse
             %ul.nav
               %li.active
-                = link_to "Home", root_path
+                = link_to "Home", root_path, :class=>"link_bar_link"
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => root_path}
-                  Discover
-                  %b.caret
+                  .link_bar_link
+                    Discover
+                    %b.caret
                 %ul.dropdown-menu
                   %li
-                    = link_to "What's Trending", "/show/trending"
+                    .link_bar_link= link_to "What's Trending", "/show/trending"
                   %li
-                    = link_to "What's Best", "/show/quality"
+                    .link_bar_link= link_to "What's Best", "/show/quality"
                   %li
-                    = link_to "What's New", "/show/newest"
+                    .link_bar_link= link_to "What's New", "/show/newest"
               %li
-                = link_to "Submit A Site", display_new_website_path
+                = link_to "Submit A Site", display_new_website_path, :class=>"link_bar_link"
               %li
                 = link_to "Friends", root_path, :id=>"friends", :class=>"link_bar_link"
               %li
-                = link_to "Profile", show_profile_path(current_user.id), :class=>"link_bar_link"
+                - if user_signed_in?
+                  = link_to "Profile", show_profile_path(current_user.id), :class=>"link_bar_link"
+                - else
+                  = link_to "Profile", root_path, :class=>"link_bar_link"
             %ul.nav.pull-right
               %li
                 - if user_signed_in?
@@ -61,14 +65,11 @@
     .container.yield-container
       / Main hero unit for a primary marketing message or call to action
       - if flash[:error] or flash[:notice] or flash[:warning]
-        .hero-unit
-          .container#wrapper
-            - if flash[:error]
-              #warning.message= flash[:error]
-            - if flash[:notice]
-              #notice.message= flash[:notice]
-            - if flash[:warning]
-              #warning.message= flash[:warning]
+        .container#wrapper
+          - if flash[:notice]
+            #notice.message= flash[:notice]
+          - if flash[:warning]
+            #warning.message= flash[:warning]
       = yield
       %hr
         %footer

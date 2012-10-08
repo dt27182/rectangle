@@ -23,9 +23,9 @@ group :development, :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'sqlite3'
+  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
   gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
-  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
