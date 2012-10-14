@@ -7,3 +7,4 @@ tmp/
 schema.rb
 Gemfile.lock
 vendor/bundle/
+.*.swp
