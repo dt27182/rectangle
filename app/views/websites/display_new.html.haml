@@ -4,7 +4,8 @@
 
 #New_Web_Info
   = form_tag commit_new_website_path(), :multipart => true, :id => "create_website_form", :method => :put do
-
+		#submission_errors.item
+			= error_messages_for :failed_website
 
     #website_name.item
       = label :website, :name, 'Website Name:'
