@@ -51,7 +51,7 @@ class WebsitesController < ApplicationController
       end
       flash[:notice] = "Website successfully submitted!"
       params[:website][:picture] = nil
-      redirect_to index_path
+      redirect_to root_path
     else
       deny_access
     end
@@ -67,7 +67,7 @@ class WebsitesController < ApplicationController
     end
     if @website.nil?
       flash[:warning] = "The requested website does not exist"
-      redirect_to index_path
+      redirect_to root_path
     end
   end
 
@@ -108,7 +108,7 @@ class WebsitesController < ApplicationController
       website = Website.find_by_id(params[:id])
       if website.nil?
         flash[:warning] = "The requested website does not exist"
-        redirect_to index_path and return
+        redirect_to root_path and return
       end
       endorsement = Endorsement.find_by_user_id_and_website_id(current_user.id, website.id)
       if endorsement.nil?
@@ -129,7 +129,7 @@ class WebsitesController < ApplicationController
       website = Website.find_by_id(params[:id])
       if website.nil?
         flash[:warning] = "The requested website does not exist"
-        redirect_to index_path and return
+        redirect_to root_path and return
       end
       endorsement = Endorsement.find_by_user_id_and_website_id(current_user.id, website.id)
       if endorsement.nil?

@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
     @sort_type = params[:sort_type]
     if @category.nil?
       flash[:warning]  = "The requested category does not exist"
-      redirect_to index_path and return
+      redirect_to root_path and return
     end
     @websites = nil
     if params[:sort_type] == "quality"
