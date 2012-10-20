@@ -12,6 +12,10 @@ Rectangle::Application.routes.draw do
   match '/categories/:name/subcategories/:subname/show/:sort_type' => 'subcategories#show', :as => :show_subcategory
   #page for website description and comments
   match '/website/:id/show' => 'websites#show', :as => :show_website
+  #page for searching and search results
+  match '/search/show' => 'search#show', :as => :show_search
+  #page for search form submission
+  get '/search/find' => 'search#find', :as => :find_search
   #page to create review for website
   get '/website/:id/comments/new' => 'comments#display_new', :as => :display_new_comment
   put '/website/:id/comments/new' => 'comments#commit_new', :as => :commit_new_comment

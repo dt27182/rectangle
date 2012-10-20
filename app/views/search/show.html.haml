@@ -1,0 +1,36 @@
+%display_new
+  #search_details_statement
+    %h2 Search For Users and Websites!
+
+#Search_Field
+  = form_tag find_search_path(), :id => "search_form", :method => :get do
+
+    #search_type.item
+      = label :search_type, :possible_types, 'Search Type:'
+      %br
+      = select :search_type, :possible_types, ['Users', 'Websites'], :selected => "#{@prev_type}"
+
+    #search_field.item
+      = label :search_text, 'Search For (User Email, Website Name, Website URL):'
+      %br
+      = text_field :search_text, :criteria, :value => "#{@prev_search}"
+
+    #search_button.item
+      = submit_tag 'Search!'
+
+#Search_Results
+  - if @prev_search == ""
+    = "Please enter a search term!"
+  - else
+    - if @search_results != []
+      = "Results for #{@prev_search} in #{@prev_type}:"
+      %ul
+        - @search_results.each do |result|
+          - if @prev_type == 'Users'
+            %li
+              = "Display information for User #{result.email}"
+          - if @prev_type == 'Websites'
+            %li
+              = "Display information for Website '#{result.name}' at #{result.url}"
+    - else
+      = "No results found for '#{@prev_search}' in #{@prev_type}!"
