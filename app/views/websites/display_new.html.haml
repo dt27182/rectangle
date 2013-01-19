@@ -20,7 +20,7 @@
 		#website_category.item
 			= label :category, 'Category Selection:'
 			%br
-			= select :category, :name, ['shopping', 'productivity', 'entertainment', 'misc'], :selected => "#{@failed_category[:name]}"
+			= select :category, :name, ['buy stuff', 'learn stuff', 'watch stuff', 'listen to stuff', 'plan stuff', 'play stuff', 'social stuff', 'productivity stuff', 'read stuff', 'other stuff'], :selected => "#{@failed_category[:name]}"
 		
 		#website_description.item
 			= label :website, :description,  'Site Description:'

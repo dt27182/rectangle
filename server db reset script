@@ -9,18 +9,34 @@ Endorsement.delete_all
 
 Community.create!({:name => "default"})
 
-shopping = Category.create!({:name => "shopping"})
-productivity = Category.create!({:name => "productivity"})
-entertainment = Category.create!({:name => "entertainment"})
-misc = Category.create!({:name => "misc"})
+buy_stuff = Category.create!({:name => "buy stuff"})
+learn_stuff = Category.create!({:name => "learn stuff"})
+watch_stuff = Category.create!({:name => "watch stuff"})
+listen_to_stuff = Category.create!({:name => "listen to stuff"})
+plan_stuff = Category.create!({:name => "plan stuff"})
+play_stuff = Category.create!({:name => "play stuff"})
+social_stuff = Category.create!({:name => "social stuff"})
+productivity_stuff = Category.create!({:name => "productivity stuff"})
+read_stuff = Category.create!({:name => "read stuff"})
+other_stuff = Category.create!({:name => "other stuff"})
 
-shopping.subcategories << Subcategory.create!({:name => "general"})
-shopping.save!
-productivity.subcategories << Subcategory.create!({:name => "general"})
-productivity.save!
-entertainment.subcategories << Subcategory.create!({:name => "general"})
-entertainment.save!
-misc.subcategories << Subcategory.create!({:name => "general"})
-misc.save!
-
-
+buy_stuff.subcategories << Subcategory.create!({:name => "general"})
+buy_stuff.save!
+learn_stuff.subcategories << Subcategory.create!({:name => "general"})
+learn_stuff.save!
+watch_stuff.subcategories << Subcategory.create!({:name => "general"})
+watch_stuff.save!
+listen_to_stuff.subcategories << Subcategory.create!({:name => "general"})
+listen_to_stuff.save!
+plan_stuff.subcategories << Subcategory.create!({:name => "general"})
+plan_stuff.save!
+play_stuff.subcategories << Subcategory.create!({:name => "general"})
+play_stuff.save!
+social_stuff.subcategories << Subcategory.create!({:name => "general"})
+social_stuff.save!
+productivity_stuff.subcategories << Subcategory.create!({:name => "general"})
+productivity_stuff.save!
+read_stuff.subcategories << Subcategory.create!({:name => "general"})
+read_stuff.save!
+other_stuff.subcategories << Subcategory.create!({:name => "general"})
+other_stuff.save!

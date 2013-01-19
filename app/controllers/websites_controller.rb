@@ -5,7 +5,7 @@ class WebsitesController < ApplicationController
 				@failed_website = Website.new
 			end
 			if @failed_category.nil?
-				@failed_category = {:name => "shopping"}
+				@failed_category = {:name => "buy_stuff"}
 			end
 		else
 			deny_access
@@ -18,7 +18,7 @@ class WebsitesController < ApplicationController
 			if category.nil?
 				params[:website][:picture] = nil
 				@failed_website = Website.new(params[:website])
-				@failed_category = {:name => "shopping"}
+				@failed_category = {:name => "buy_stuff"}
 				render :action => "display_new" and return
 			end
 			subcategory = category.subcategories[0]
