@@ -1,12 +1,12 @@
 development:
   bucket: rectangle_images_dev
-  access_key_id: 	AKIAJ4DNHROL7V42I4BQ
-  secret_access_key: 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
+  access_key_id: 	
+  secret_access_key: 
 test:
   bucket: rectangle_images_dev
-  access_key_id: 	AKIAJ4DNHROL7V42I4BQ
-  secret_access_key: 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
+  access_key_id: 	
+  secret_access_key: 
 production:
   bucket: rectangle_images_prod
-  access_key_id: 	AKIAJ4DNHROL7V42I4BQ
-  secret_access_key: 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
+  access_key_id: 	
+  secret_access_key: 
